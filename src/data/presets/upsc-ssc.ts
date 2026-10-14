@@ -2,22 +2,22 @@ import { ExamPortalPreset } from '@/types/preset';
 
 export const upscSscPresets: ExamPortalPreset[] = [
   {
-    slug: 'upsc-photo-signature-resizer',
+    slug: 'upsc-cse-ias-photo-signature-resizer',
     shortName: 'UPSC CSE / IAS',
-    fullName: 'Union Public Service Commission (Civil Services, NDA, CDS, CAPF)',
+    fullName: 'Union Public Service Commission (Civil Services, NDA, CDS, CAPF, CMS, EPFO)',
     category: 'upsc',
     conductingBody: 'Union Public Service Commission (UPSC)',
     officialWebsiteUrl: 'https://upsc.gov.in',
     notificationReference: 'UPSC Civil Services Examination Gazette Notification, Section: Instructions to Candidates for Scanned Photograph & Signature',
     lastVerifiedDate: '2026-02-15',
     searchKeywords: [
-      'upsc photo resizer',
-      'upsc signature size',
-      'upsc photo with name and date',
-      'ias form photo resizer',
-      'upsc 350x350 photo',
-      'upsc 550x550 photo',
+      'upsc photo and signature resizer',
+      'upsc photo size 350x350 to 1000x1000',
+      'upsc photo with name and date maker',
       'upsc otr photo resize',
+      'nda cds capf photo size',
+      '3/4th face coverage upsc',
+      'date of photo dop calculator',
     ],
     assets: [
       {
@@ -35,8 +35,8 @@ export const upscSscPresets: ExamPortalPreset[] = [
         backgroundRule: 'Plain white or light grey background',
         requiresNameAndDate: 'mandatory',
         notes: [
-          'The candidate face must occupy 3/4th (approx. 75%) of the photograph space.',
-          'The photograph must show the candidate name and the date on which photograph was taken (DOP) printed at the bottom.',
+          'Candidate face must occupy 3/4th (approx. 75%) of the photograph space.',
+          'Must clearly display candidate full name and date on which photograph was taken (DOP) printed at bottom.',
           'Aspect ratio is square 1:1, between 350x350 px and 1000x1000 px. Optimal recommended standard is 550x550 px.',
           'Caps, masks, dark sunglasses, and tinted spectacles are strictly forbidden.',
         ],
@@ -82,9 +82,31 @@ export const upscSscPresets: ExamPortalPreset[] = [
         ],
       },
     ],
+    troubleshooting: [
+      {
+        portalMessage: 'Dimensions of photograph must be equal (Width = Height).',
+        cause: 'You uploaded a rectangular portrait (e.g., 3.5 × 4.5 cm ratio) instead of a 1:1 square.',
+        solution: 'Our tool locks the crop box strictly to a 1:1 square (550 × 550 px) to satisfy UPSC automated aspect check.',
+      },
+      {
+        portalMessage: 'Uploaded file size is less than 20 KB.',
+        cause: 'Signatures or clean background photos often compress to 10–18 KB at normal compression.',
+        solution: 'Our exact-KB compressor targets the 40–120 KB range and automatically applies byte-floor padding if needed.',
+      },
+      {
+        portalMessage: 'Candidate photograph does not show Name and Date.',
+        cause: 'UPSC mandates that candidate name and DOP must be clearly printed at the bottom of the photo.',
+        solution: 'Enable the built-in Name & Date on Photo toggle to embed a crisp white banner with your details.',
+      },
+    ],
+    captureTips: [
+      'Stand 4 feet away against a plain white wall in daylight to avoid shadows behind your ears.',
+      'Do not wear white clothing against a white background; choose a dark or contrasting shirt.',
+      'Sign with a bold black gel or ballpoint pen on unruled white paper to ensure high contrast.',
+    ],
     faqs: [
       {
-        question: 'Is Name and Date of Photograph mandatory for UPSC CSE?',
+        question: 'Is Name and Date of Photograph mandatory for UPSC CSE & OTR?',
         answer: 'Yes. Recent UPSC notifications mandate that the candidate full name and date on which the photograph was taken (DOP) must be clearly printed at the bottom of the photo. FormFit India generates this compliant plaque automatically.',
       },
       {
@@ -95,25 +117,40 @@ export const upscSscPresets: ExamPortalPreset[] = [
         question: 'Can I upload a signature signed with blue ink for UPSC?',
         answer: 'No. The official UPSC notification explicitly specifies that the candidate must sign using a black ink pen on clean white unruled paper.',
       },
+      {
+        question: 'How recent should the photograph be for UPSC forms?',
+        answer: 'The photograph must not be more than 10 days old from the commencement of the online application process, and candidate facial appearance must match on the day of the preliminary and main exams.',
+      },
+      {
+        question: 'Why does UPSC reject signatures written in capital letters?',
+        answer: 'Signatures must represent authentic handwriting strokes. Full capital letters are considered block writing rather than a legal signature and will result in scrutiny cancellation.',
+      },
+      {
+        question: 'What is the required PDF size for the UPSC Photo ID document?',
+        answer: 'The scanned copy of your chosen photo identity card (Aadhaar, Voter ID, PAN, Passport, or Driving License) must be in PDF format between 20 KB and 300 KB.',
+      },
     ],
   },
   {
-    slug: 'ssc-cgl-chsl-mts-resizer',
-    shortName: 'SSC CGL / CHSL / MTS',
-    fullName: 'Staff Selection Commission (CGL, CHSL, MTS, CPO, GD Constable)',
+    slug: 'ssc-cgl-chsl-mts-gd-resizer',
+    shortName: 'SSC CGL / CHSL / MTS / GD',
+    fullName: 'Staff Selection Commission (CGL, CHSL, MTS, CPO, GD Constable, Selection Posts)',
     category: 'ssc',
     conductingBody: 'Staff Selection Commission (SSC)',
     officialWebsiteUrl: 'https://ssc.gov.in',
     notificationReference: 'SSC Combined Graduate Level Examination Notice, Section: Uploading of Candidate Scanned Signature & Live Photograph Protocol',
     lastVerifiedDate: '2026-03-01',
-    liveCaptureAdvisory: 'Important Advisory: The new ssc.gov.in portal requires live webcam / smartphone camera capture for the photograph during the online form session. However, the signature is strictly uploaded as a 10 KB–20 KB JPG image formatted to 4.0 cm × 2.0 cm (or 140 × 60 px).',
+    liveCaptureAdvisory: 'Important Advisory: The ssc.gov.in portal requires live webcam / smartphone camera capture for the photograph during the online form session. However, the signature is strictly uploaded as a 10 KB–20 KB JPG image formatted to 4.0 cm × 2.0 cm (or 140 × 60 px).',
     searchKeywords: [
-      'ssc photo resizer',
-      'ssc signature size 10kb to 20kb',
+      'ssc signature resizer 10kb to 20kb',
+      'ssc photo resizer 20kb to 50kb',
       'ssc 4cm x 2cm signature converter',
       'ssc cgl signature resizer',
       'ssc chsl signature format',
       'ssc mts signature 140x60',
+      'ssc.gov.in live photo capture fix',
+      'ssc gd constable photo with date',
+      'ssc blurred signature fix',
     ],
     assets: [
       {
@@ -158,6 +195,22 @@ export const upscSscPresets: ExamPortalPreset[] = [
         ],
       },
     ],
+    troubleshooting: [
+      {
+        portalMessage: 'Signature file size is less than 10 KB or greater than 20 KB.',
+        cause: 'Signatures naturally compress down to 4–8 KB on clean white paper, which standard resizers fail to pad.',
+        solution: 'FormFit India automatically injects safe JFIF comment padding to guarantee the file lands safely around 15–18 KB.',
+      },
+      {
+        portalMessage: 'Signature image is blurred or illegible.',
+        cause: 'Uneven room shadow or low camera focus makes pen strokes faint.',
+        solution: 'Enable our Smart Signature Paper Whitener with adaptive ink thresholding to produce rich, crisp strokes.',
+      },
+    ],
+    captureTips: [
+      'Take a photo of your signature in bright direct light without casting your phone shadow over the paper.',
+      'Do not crop too closely to the ink edges; keep 2–3mm of white margin around the signature.',
+    ],
     faqs: [
       {
         question: 'Why does my SSC signature get rejected for file size?',
@@ -166,6 +219,22 @@ export const upscSscPresets: ExamPortalPreset[] = [
       {
         question: 'Does SSC CGL require uploading a photo file?',
         answer: 'On the ssc.gov.in portal, candidates capture their photograph live via webcam or smartphone camera during application. However, the signature must be uploaded as a pre-formatted 10 KB–20 KB file. For offline, paper, and physical document verification, 3.5 × 4.5 cm photos are required.',
+      },
+      {
+        question: 'What are the signature pixel dimensions for SSC exams?',
+        answer: 'Official guidelines specify 4.0 cm width by 2.0 cm height, which corresponds to 140 × 60 pixels (or 236 × 118 pixels at 200 DPI).',
+      },
+      {
+        question: 'Can I use blue ink for the SSC signature?',
+        answer: 'Yes, SSC allows black or blue ballpoint ink on clean white unruled paper.',
+      },
+      {
+        question: 'Can I sign in block or capital letters for SSC?',
+        answer: 'No. Signatures in capital letters are strictly rejected by the Commission.',
+      },
+      {
+        question: 'Does FormFit India upload my signature to any server?',
+        answer: 'No. All image scaling, paper whitening, and byte padding occur entirely on your device memory.',
       },
     ],
   },

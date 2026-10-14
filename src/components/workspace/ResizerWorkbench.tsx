@@ -15,12 +15,13 @@ import { compressCanvasToExactKB, CompressionResult } from '@/lib/imaging/kb-com
 import { auditOutputBuffer, ComplianceAuditReport } from '@/lib/imaging/compliance-auditor';
 import { packageJpegIntoPdf } from '@/lib/imaging/pdf-packager';
 import { ShieldAlert, ArrowLeft, RefreshCw, FileText } from 'lucide-react';
+import { EXAM_PRESETS } from '@/data/presets';
 
 interface ResizerWorkbenchProps {
-  initialPreset: ExamPortalPreset;
+  initialPreset?: ExamPortalPreset;
 }
 
-export function ResizerWorkbench({ initialPreset }: ResizerWorkbenchProps) {
+export function ResizerWorkbench({ initialPreset = EXAM_PRESETS[0]! }: ResizerWorkbenchProps) {
   // Preset and custom mode state
   const [selectedPreset, setSelectedPreset] = useState<ExamPortalPreset | null>(initialPreset);
   const [isCustomMode, setIsCustomMode] = useState<boolean>(false);

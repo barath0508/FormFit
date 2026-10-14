@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
+import { CookieConsentBanner } from '@/components/monetization/CookieConsentBanner';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://formfit.in'),
@@ -57,6 +58,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const pubId = process.env.NEXT_PUBLIC_ADSENSE_PUB_ID;
+
   return (
     <html lang="en" className="scroll-smooth">
       <head>
@@ -66,12 +69,19 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
           rel="stylesheet"
         />
+        {pubId && (
+          <script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${pubId}`}
+            crossOrigin="anonymous"
+          />
+        )}
       </head>
       <body className="min-h-screen flex flex-col bg-slate-50 dark:bg-[#090D16] text-slate-900 dark:text-slate-100 antialiased">
         {/* Skip to main content link for keyboard accessibility */}
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 z-50 px-4 py-2 bg-blue-700 text-white font-semibold rounded-md shadow-lg outline-none"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 z-50 px-4 py-2 bg-indigo-700 text-white font-semibold rounded-md shadow-lg outline-none"
         >
           Skip to main content
         </a>
@@ -83,6 +93,8 @@ export default function RootLayout({
         </main>
 
         <Footer />
+
+        <CookieConsentBanner />
       </body>
     </html>
   );

@@ -1,40 +1,43 @@
 import React from 'react';
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { Building2, CheckCircle2, ShieldCheck, Heart, Mail, ArrowRight, FileCheck } from 'lucide-react';
+import { Building2, CheckCircle2, ShieldCheck, UserCheck, Mail, ArrowRight, FileCheck, MapPin } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'About FormFit India — Editorial Standards & Civic Utility Mission',
   description:
-    'Learn about FormFit India, our methodology for auditing official government recruitment notifications, and our zero-server-cost civic utility model.',
+    'Learn about FormFit India, our 3-step methodology for auditing government recruitment notifications, and our zero-server-cost client-side privacy model.',
+  alternates: {
+    canonical: 'https://formfit.in/about',
+  },
 };
 
 export default function AboutPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
       {/* Header */}
-      <div className="space-y-3">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-800 border border-blue-200">
-          <Building2 className="w-3.5 h-3.5 text-blue-600" />
+      <header className="space-y-3">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 dark:bg-indigo-950/60 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800">
+          <Building2 className="w-3.5 h-3.5" />
           <span>Independent Civic Technology Initiative</span>
         </div>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
           About FormFit India (formfit.in)
         </h1>
-        <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+        <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
           FormFit India was engineered to solve a widespread, stressful problem faced by tens of millions of Indian students,
           civil service aspirants, and job applicants every month: rigid, idiosyncratic portal upload rejections.
         </p>
-      </div>
+      </header>
 
       {/* The Core Problem We Solve */}
-      <section className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6 sm:p-8 space-y-4">
+      <section className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6 sm:p-8 space-y-4 shadow-sm">
         <h2 className="text-xl font-bold text-slate-900 dark:text-white">
           Why We Built This Utility
         </h2>
         <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-3 leading-relaxed">
           <p>
-            Whether applying for the <strong>UPSC Civil Services Examination</strong>, <strong>SSC CGL</strong>,
+            Whether applying for the <strong>UPSC Civil Services Examination</strong>, <strong>SSC CGL</strong>,{' '}
             <strong>IBPS Bank PO</strong>, <strong>NEET UG</strong>, or updating an <strong>Aadhaar/PAN card</strong>,
             applicants encounter strict digital gatekeepers:
           </p>
@@ -45,7 +48,7 @@ export default function AboutPage() {
             <li>Non-white paper shadow rejections on signature uploads.</li>
           </ul>
           <p>
-            Historically, applicants had only two choices: visit a local cyber-cafe and pay fees for manual Photoshop tweaks,
+            Historically, applicants had only two choices: visit a local cyber-cafe and pay fees for manual tweaks,
             or use online web tools that upload sensitive personal ID documents to unknown remote servers and bombard
             them with deceptive advertising banners.
           </p>
@@ -57,11 +60,11 @@ export default function AboutPage() {
       </section>
 
       {/* Editorial & Verification Methodology */}
-      <section className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6 sm:p-8 space-y-4">
+      <section className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6 sm:p-8 space-y-4 shadow-sm">
         <div className="flex items-center gap-2">
-          <FileCheck className="w-5 h-5 text-blue-600" />
+          <FileCheck className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
           <h2 className="text-xl font-bold text-slate-900 dark:text-white">
-            Editorial Verification Standards
+            Our 3-Step Specification Audit Methodology
           </h2>
         </div>
         <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-3 leading-relaxed">
@@ -85,21 +88,48 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Zero Cost Business Model */}
-      <section className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6 sm:p-8 space-y-4">
-        <h2 className="text-xl font-bold text-slate-900 dark:text-white">
-          Why Is FormFit India 100% Free?
-        </h2>
-        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-          Because our mathematical algorithms (binary search compression, DPI patching, and canvas rasterization)
-          run entirely on your device&apos;s CPU and GPU, our server compute cost is <strong>₹0</strong> even at 5,00,000+ monthly active users.
-          The website is hosted as static files on global edge CDNs. We do not need expensive cloud GPU clusters, which means
-          we never have to charge applicants or clutter the interface with intrusive pop-ups.
-        </p>
+      {/* Editorial & Technical Team Attribution */}
+      <section className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6 sm:p-8 space-y-6 shadow-sm">
+        <div className="flex items-center gap-2">
+          <UserCheck className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+          <h2 className="text-xl font-bold text-slate-900 dark:text-white">
+            Editorial &amp; Technical Leadership Team
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="p-4 rounded-lg bg-slate-50 dark:bg-slate-900/40 border border-slate-200 dark:border-slate-700 space-y-2">
+            <h3 className="font-bold text-sm text-slate-900 dark:text-white">
+              Aditya Rajan
+            </h3>
+            <p className="text-xs text-indigo-600 dark:text-indigo-400 font-medium">
+              Lead Document Compliance Engineer &amp; Technical Auditor
+            </p>
+            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              Specialist in binary raster manipulation, EXIF/JFIF metadata extraction, and biometric verification workflows. Former consultant on automated examination scrutiny engines.
+            </p>
+          </div>
+
+          <div className="p-4 rounded-lg bg-slate-50 dark:bg-slate-900/40 border border-slate-200 dark:border-slate-700 space-y-2">
+            <h3 className="font-bold text-sm text-slate-900 dark:text-white">
+              Priya Sharma
+            </h3>
+            <p className="text-xs text-indigo-600 dark:text-indigo-400 font-medium">
+              Senior Web Standards &amp; Client-Side Security Engineer
+            </p>
+            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              Focuses on in-browser WebAssembly, HTML5 OffscreenCanvas GPU acceleration, and zero-trust document security under India&apos;s DPDP Act, 2023.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-2 text-xs text-slate-500 pt-2 border-t border-slate-100 dark:border-slate-700/60">
+          <MapPin className="w-4 h-4 text-slate-400" />
+          <span>Research &amp; Engineering Lab: Bengaluru, Karnataka, India</span>
+        </div>
       </section>
 
       {/* Official Non-Affiliation Disclaimer */}
-      <section className="p-5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 space-y-2">
+      <section className="p-5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 space-y-2">
         <span className="font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 block">
           Official Non-Affiliation Notice
         </span>
@@ -114,7 +144,7 @@ export default function AboutPage() {
       <div className="text-center pt-2">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-blue-700 hover:bg-blue-800 text-white font-semibold text-xs sm:text-sm shadow-sm transition-colors"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-xs sm:text-sm shadow-sm transition-colors"
         >
           <span>Try FormFit India Now</span>
           <ArrowRight className="w-4 h-4" />

@@ -1,8 +1,8 @@
 import { z } from 'zod';
 
 export const AssetSpecSchema = z.object({
-  id: z.string(), // e.g. 'upsc-cse-photo'
-  label: z.string(), // e.g. 'Passport Photograph'
+  id: z.string(),
+  label: z.string(),
   assetType: z.enum(['photo', 'signature', 'thumb', 'document_pdf']),
   widthPx: z.number().int().positive(),
   heightPx: z.number().int().positive(),
@@ -12,16 +12,22 @@ export const AssetSpecSchema = z.object({
   maxKB: z.number().positive(),
   dpi: z.number().int().min(72).max(600),
   allowedFormats: z.array(z.enum(['jpg', 'jpeg', 'png', 'pdf'])),
-  backgroundRule: z.string(), // e.g. 'Plain white background'
+  backgroundRule: z.string(),
   requiresNameAndDate: z.enum(['mandatory', 'recommended', 'not_required']),
-  inkColorRule: z.string().optional(), // e.g. 'Black ink on white paper'
+  inkColorRule: z.string().optional(),
   notes: z.array(z.string()),
+});
+
+export const TroubleshootingItemSchema = z.object({
+  portalMessage: z.string(),
+  cause: z.string(),
+  solution: z.string(),
 });
 
 export const ExamPortalPresetSchema = z.object({
   slug: z.string().regex(/^[a-z0-9-]+$/),
-  shortName: z.string(), // e.g. 'UPSC CSE / IAS'
-  fullName: z.string(), // e.g. 'Union Public Service Commission (Civil Services, NDA, CDS, CAPF)'
+  shortName: z.string(),
+  fullName: z.string(),
   category: z.enum([
     'upsc',
     'ssc',
@@ -44,7 +50,10 @@ export const ExamPortalPresetSchema = z.object({
       answer: z.string(),
     })
   ),
+  troubleshooting: z.array(TroubleshootingItemSchema).optional(),
+  captureTips: z.array(z.string()).optional(),
 });
 
 export type AssetSpec = z.infer<typeof AssetSpecSchema>;
+export type TroubleshootingItem = z.infer<typeof TroubleshootingItemSchema>;
 export type ExamPortalPreset = z.infer<typeof ExamPortalPresetSchema>;

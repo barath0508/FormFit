@@ -20,11 +20,123 @@ import {
 export const metadata: Metadata = {
   title: 'FormFit India — Free Client-Side Exam Photo, Signature & Document Resizer',
   description:
-    'Free online photo and signature resizer for UPSC, SSC, IBPS, SBI, RRB, NEET, JEE, PAN Card, and Indian Passport. Injects exact 200/300 DPI header, satisfies strict 10–20 KB & 20–50 KB floors, and adds Name/Date slates. 100% private in-browser tool.',
+    'Free online photo and signature resizer for UPSC, SSC, IBPS, RRB, NEET & PAN Card. Injects 200/300 DPI headers & locks 10–20KB and 20–50KB sizes. 100% private in-browser.',
+  alternates: {
+    canonical: 'https://formfit.in',
+  },
+  openGraph: {
+    title: 'FormFit India — Official Exam Spec Photo & Signature Resizer',
+    description:
+      'Free online photo and signature resizer for UPSC, SSC, IBPS, RRB, NEET & PAN Card. Injects 200/300 DPI headers & locks 10–20KB and 20–50KB sizes. 100% private in-browser.',
+    url: 'https://formfit.in',
+    siteName: 'FormFit India — Official Exam Spec Photo & Signature Resizer',
+    locale: 'en_IN',
+    type: 'website',
+  },
 };
 
 export default function HomePage() {
   const defaultPreset = getPresetBySlug('upsc-photo-signature-resizer') || EXAM_PRESETS[0]!;
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://formfit.in' },
+        ],
+      },
+      {
+        '@type': 'WebApplication',
+        '@id': 'https://formfit.in/#app',
+        name: 'FormFit India — Official Exam Photo, Signature & Document Resizer',
+        url: 'https://formfit.in',
+        applicationCategory: 'UtilitiesApplication',
+        operatingSystem: 'Android, iOS, Windows, macOS, Linux (All HTML5 Browsers)',
+        browserRequirements: 'Requires HTML5 Canvas and JavaScript',
+        offers: {
+          '@type': 'Offer',
+          price: '0',
+          priceCurrency: 'INR',
+        },
+        author: {
+          '@type': 'Organization',
+          name: 'FormFit India Document Compliance Lab',
+          url: 'https://formfit.in/about',
+        },
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'How does FormFit India ensure 100% privacy for sensitive documents?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'All image resizing, background whitening, date slate rendering, and JPEG compression execute entirely inside your device memory using HTML5 Canvas and Web Workers. Zero bytes of your photographs, signatures, or caste/identity certificates are ever uploaded to any remote server.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Why do government portals like NSDL PAN and State PSCs reject resized photos?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Government upload validators inspect the binary JFIF (APP0) density metadata header in the JPEG file to confirm it contains exactly 200 DPI or 300 DPI. Standard online photo editors only export at default 72 or 96 DPI. FormFit India automatically injects the verified big-endian DPI header bytes.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'How do you prevent signatures from falling below the minimum KB floor (e.g., 10 KB or 30 KB)?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Clean signatures on white paper compress down to 3 KB–8 KB even at high quality, causing portals like SSC (10–20 KB) and Railway RRB (30–70 KB) to reject them. FormFit India uses intelligent, standards-compliant JPEG Comment (0xFFFE) byte-floor padding so your signature always satisfies the portal minimum size requirement.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Can I use FormFit India while completely offline?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes! Once this web page is loaded in your browser, you can turn off your Wi-Fi, cellular data, or enable Airplane Mode. The tool will continue to resize, filter, and download your files completely offline.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'What is the required photo format for UPSC OTR and CSE exams?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'UPSC mandates that passport photographs have minimum 350x350 pixels up to 1000x1000 pixels, with file size between 20 KB and 300 KB. The face must occupy 75% to 80% of the image frame, and the photograph must clearly display the candidate name and the date of capture at the bottom.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'How do I resize an IBPS handwritten declaration to 50KB-100KB?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'IBPS PO, Clerk, and SO forms require the handwritten declaration in black ink on white paper, formatted to 800x400 pixels (aspect ratio 2:1) within 50 KB to 100 KB. FormFit provides a dedicated preset that scales declaration scans to exact dimensions and compresses them into the compliant KB range.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'What ink color must be used for SSC, Banking, and NTA signatures?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'SSC, UPSC, and State PSCs accept black or blue ink signatures, while IBPS, SBI, and NTA strictly mandate black ink on white unruled paper. Signatures written in capital letters or blurred by camera shake are summarily rejected.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'How do I convert a photo to 200 DPI for NSDL PAN card applications?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'NSDL Protean requires 200 DPI resolution at 2.5x3.5 cm (197x276 pixels) under 50 KB. FormFit automatically rewires the JPEG JFIF header to declare 200 DPI horizontal and vertical density, ensuring immediate portal acceptance without Photoshop.',
+            },
+          },
+        ],
+      },
+    ],
+  };
 
   const generalFaqs = [
     {
@@ -47,10 +159,36 @@ export default function HomePage() {
       answer:
         'Yes! Once this web page is loaded in your browser, you can turn off your Wi-Fi, cellular data, or enable Airplane Mode. The tool will continue to resize, filter, and download your files completely offline.',
     },
+    {
+      question: 'What is the required photo format for UPSC OTR and CSE exams?',
+      answer:
+        'UPSC mandates that passport photographs have minimum 350x350 pixels up to 1000x1000 pixels, with file size between 20 KB and 300 KB. The face must occupy 75% to 80% of the image frame, and the photograph must clearly display the candidate name and the date of capture at the bottom.',
+    },
+    {
+      question: 'How do I resize an IBPS handwritten declaration to 50KB-100KB?',
+      answer:
+        'IBPS PO, Clerk, and SO forms require the handwritten declaration in black ink on white paper, formatted to 800x400 pixels (aspect ratio 2:1) within 50 KB to 100 KB. FormFit provides a dedicated preset that scales declaration scans to exact dimensions and compresses them into the compliant KB range.',
+    },
+    {
+      question: 'What ink color must be used for SSC, Banking, and NTA signatures?',
+      answer:
+        'SSC, UPSC, and State PSCs accept black or blue ink signatures, while IBPS, SBI, and NTA strictly mandate black ink on white unruled paper. Signatures written in capital letters or blurred by camera shake are summarily rejected.',
+    },
+    {
+      question: 'How do I convert a photo to 200 DPI for NSDL PAN card applications?',
+      answer:
+        'NSDL Protean requires 200 DPI resolution at 2.5x3.5 cm (197x276 pixels) under 50 KB. FormFit automatically rewires the JPEG JFIF header to declare 200 DPI horizontal and vertical density, ensuring immediate portal acceptance without Photoshop.',
+    },
   ];
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+      {/* 1. Structured Data Script */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Hero Header Section */}
       <div className="text-center space-y-3 max-w-3xl mx-auto">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-800 border border-blue-200 dark:bg-blue-950/60 dark:text-blue-300 dark:border-blue-800">
@@ -89,7 +227,7 @@ export default function HomePage() {
             href="/specs-directory"
             className="text-xs font-semibold text-blue-700 hover:text-blue-800 dark:text-blue-400 flex items-center gap-1 group"
           >
-            <span>View All 24+ Exams</span>
+            <span>View All 32+ Exams</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
           </Link>
         </div>
@@ -124,6 +262,68 @@ export default function HomePage() {
               </div>
             </Link>
           ))}
+        </div>
+      </section>
+
+      {/* Comprehensive Master Comparison Table */}
+      <section className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 sm:p-8 space-y-4">
+        <div>
+          <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
+            Official Indian Examination Specification Reference (2026–2027)
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
+            Carefully audited specifications cross-referenced against official notifications from UPSC, SSC, IBPS, NTA, and RRB recruitment boards.
+          </p>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="w-full text-left text-xs sm:text-sm divide-y divide-slate-200 dark:divide-slate-700 border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden">
+            <thead className="bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 font-semibold uppercase tracking-wider text-[11px]">
+              <tr>
+                <th scope="col" className="px-4 py-3">Examination / Portal</th>
+                <th scope="col" className="px-4 py-3">Photo Dimensions &amp; Size</th>
+                <th scope="col" className="px-4 py-3">Signature Dimensions &amp; Size</th>
+                <th scope="col" className="px-4 py-3">DPI &amp; Mandatory Rules</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-100 dark:divide-slate-700/60 font-medium">
+              <tr className="hover:bg-slate-50/80 dark:hover:bg-slate-700/40">
+                <td className="px-4 py-3 font-bold text-slate-900 dark:text-white">UPSC Civil Services (OTR)</td>
+                <td className="px-4 py-3 font-mono text-blue-700 dark:text-blue-400">350×350 to 1000×1000 px (20–300 KB)</td>
+                <td className="px-4 py-3 font-mono text-slate-700 dark:text-slate-300">550×350 px (20–300 KB)</td>
+                <td className="px-4 py-3 text-slate-600 dark:text-slate-400">200 DPI, 75% face coverage, Name &amp; Date plaque required</td>
+              </tr>
+              <tr className="hover:bg-slate-50/80 dark:hover:bg-slate-700/40">
+                <td className="px-4 py-3 font-bold text-slate-900 dark:text-white">SSC (CGL, CHSL, MTS, GD)</td>
+                <td className="px-4 py-3 font-mono text-blue-700 dark:text-blue-400">275×354 px / 3.5×4.5 cm (20–50 KB)</td>
+                <td className="px-4 py-3 font-mono text-slate-700 dark:text-slate-300">236×118 px / 4.0×2.0 cm (10–20 KB)</td>
+                <td className="px-4 py-3 text-slate-600 dark:text-slate-400">200 DPI, white background, no caps in signature</td>
+              </tr>
+              <tr className="hover:bg-slate-50/80 dark:hover:bg-slate-700/40">
+                <td className="px-4 py-3 font-bold text-slate-900 dark:text-white">IBPS &amp; SBI Banking</td>
+                <td className="px-4 py-3 font-mono text-blue-700 dark:text-blue-400">200×230 px / 3.5×4.5 cm (20–50 KB)</td>
+                <td className="px-4 py-3 font-mono text-slate-700 dark:text-slate-300">140×60 px (10–20 KB)</td>
+                <td className="px-4 py-3 text-slate-600 dark:text-slate-400">200 DPI, black ink signature, 800×400 declaration (50–100 KB)</td>
+              </tr>
+              <tr className="hover:bg-slate-50/80 dark:hover:bg-slate-700/40">
+                <td className="px-4 py-3 font-bold text-slate-900 dark:text-white">NTA NEET UG &amp; JEE Main</td>
+                <td className="px-4 py-3 font-mono text-blue-700 dark:text-blue-400">276×354 px &amp; 4×6 inch Postcard (10–200 KB)</td>
+                <td className="px-4 py-3 font-mono text-slate-700 dark:text-slate-300">276×118 px (4–30 KB)</td>
+                <td className="px-4 py-3 text-slate-600 dark:text-slate-400">200 DPI, white background, 80% face coverage showing ears</td>
+              </tr>
+              <tr className="hover:bg-slate-50/80 dark:hover:bg-slate-700/40">
+                <td className="px-4 py-3 font-bold text-slate-900 dark:text-white">Railway RRB (NTPC, Group D, ALP)</td>
+                <td className="px-4 py-3 font-mono text-blue-700 dark:text-blue-400">275×354 px (30–70 KB)</td>
+                <td className="px-4 py-3 font-mono text-slate-700 dark:text-slate-300">140×60 px (30–70 KB)</td>
+                <td className="px-4 py-3 text-slate-600 dark:text-slate-400">200 DPI, strict 30 KB minimum floor for signatures</td>
+              </tr>
+              <tr className="hover:bg-slate-50/80 dark:hover:bg-slate-700/40">
+                <td className="px-4 py-3 font-bold text-slate-900 dark:text-white">NSDL Protean PAN Card</td>
+                <td className="px-4 py-3 font-mono text-blue-700 dark:text-blue-400">197×276 px / 2.5×3.5 cm (10–50 KB)</td>
+                <td className="px-4 py-3 font-mono text-slate-700 dark:text-slate-300">354×157 px / 4.5×2.0 cm (10–50 KB)</td>
+                <td className="px-4 py-3 text-slate-600 dark:text-slate-400">Mandatory 200 DPI JFIF binary header check</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
@@ -178,6 +378,21 @@ export default function HomePage() {
               execute locally in your browser memory and work even in Airplane Mode.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Guide on Candidate Privacy & Server Security */}
+      <section className="bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-8 space-y-4">
+        <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
+          Why Server-Based Resizers Threaten Applicant Identity Security
+        </h2>
+        <div className="prose prose-slate dark:prose-invert max-w-none text-xs sm:text-sm space-y-3 leading-relaxed text-slate-600 dark:text-slate-300">
+          <p>
+            Every year, lakhs of competitive examination candidates inadvertently upload sensitive identity artifacts—including clear passport portraits, handwritten signatures, Aadhaar numbers, and category certificates—to unvetted third-party resizing websites. Many of these websites retain uploaded files on remote server disks, exposing candidates to digital identity theft, fraudulent bank account creation, and impersonation scams.
+          </p>
+          <p>
+            FormFit India was engineered specifically to solve this structural vulnerability. By leveraging HTML5 Canvas, the JavaScript File API, and WebAssembly, our application operates completely client-side inside your browser sandbox. When you select a photo, your browser decodes the bitmap directly into local RAM, crops and scales the pixels, pads binary bytes to satisfy minimum KB thresholds, and streams the compliant JPEG back to your Downloads folder. No server endpoint ever touches your personal files.
+          </p>
         </div>
       </section>
 
