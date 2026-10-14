@@ -18,18 +18,18 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'FormFit India — Free Client-Side Exam Photo, Signature & Document Resizer',
+  title: 'FormFit — Free Client-Side Exam Photo, Signature & Document Resizer',
   description:
     'Free online photo and signature resizer for UPSC, SSC, IBPS, RRB, NEET & PAN Card. Injects 200/300 DPI headers & locks 10–20KB and 20–50KB sizes. 100% private in-browser.',
   alternates: {
     canonical: 'https://formfit.in',
   },
   openGraph: {
-    title: 'FormFit India — Official Exam Spec Photo & Signature Resizer',
+    title: 'FormFit — Official Exam Spec Photo & Signature Resizer',
     description:
       'Free online photo and signature resizer for UPSC, SSC, IBPS, RRB, NEET & PAN Card. Injects 200/300 DPI headers & locks 10–20KB and 20–50KB sizes. 100% private in-browser.',
     url: 'https://formfit.in',
-    siteName: 'FormFit India — Official Exam Spec Photo & Signature Resizer',
+    siteName: 'FormFit — Official Exam Spec Photo & Signature Resizer',
     locale: 'en_IN',
     type: 'website',
   },
@@ -50,7 +50,7 @@ export default function HomePage() {
       {
         '@type': 'WebApplication',
         '@id': 'https://formfit.in/#app',
-        name: 'FormFit India — Official Exam Photo, Signature & Document Resizer',
+        name: 'FormFit — Official Exam Photo, Signature & Document Resizer',
         url: 'https://formfit.in',
         applicationCategory: 'UtilitiesApplication',
         operatingSystem: 'Android, iOS, Windows, macOS, Linux (All HTML5 Browsers)',
@@ -62,7 +62,7 @@ export default function HomePage() {
         },
         author: {
           '@type': 'Organization',
-          name: 'FormFit India Document Compliance Lab',
+          name: 'FormFit Document Compliance Lab',
           url: 'https://formfit.in/about',
         },
       },
@@ -71,7 +71,7 @@ export default function HomePage() {
         mainEntity: [
           {
             '@type': 'Question',
-            name: 'How does FormFit India ensure 100% privacy for sensitive documents?',
+            name: 'How does FormFit ensure 100% privacy for sensitive documents?',
             acceptedAnswer: {
               '@type': 'Answer',
               text: 'All image resizing, background whitening, date slate rendering, and JPEG compression execute entirely inside your device memory using HTML5 Canvas and Web Workers. Zero bytes of your photographs, signatures, or caste/identity certificates are ever uploaded to any remote server.',
@@ -82,7 +82,7 @@ export default function HomePage() {
             name: 'Why do government portals like NSDL PAN and State PSCs reject resized photos?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Government upload validators inspect the binary JFIF (APP0) density metadata header in the JPEG file to confirm it contains exactly 200 DPI or 300 DPI. Standard online photo editors only export at default 72 or 96 DPI. FormFit India automatically injects the verified big-endian DPI header bytes.',
+              text: 'Government upload validators inspect the binary JFIF (APP0) density metadata header in the JPEG file to confirm it contains exactly 200 DPI or 300 DPI. Standard online photo editors only export at default 72 or 96 DPI. FormFit automatically injects the verified big-endian DPI header bytes.',
             },
           },
           {
@@ -90,12 +90,12 @@ export default function HomePage() {
             name: 'How do you prevent signatures from falling below the minimum KB floor (e.g., 10 KB or 30 KB)?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Clean signatures on white paper compress down to 3 KB–8 KB even at high quality, causing portals like SSC (10–20 KB) and Railway RRB (30–70 KB) to reject them. FormFit India uses intelligent, standards-compliant JPEG Comment (0xFFFE) byte-floor padding so your signature always satisfies the portal minimum size requirement.',
+              text: 'Clean signatures on white paper compress down to 3 KB–8 KB even at high quality, causing portals like SSC (10–20 KB) and Railway RRB (30–70 KB) to reject them. FormFit uses intelligent, standards-compliant JPEG Comment (0xFFFE) byte-floor padding so your signature always satisfies the portal minimum size requirement.',
             },
           },
           {
             '@type': 'Question',
-            name: 'Can I use FormFit India while completely offline?',
+            name: 'Can I use FormFit while completely offline?',
             acceptedAnswer: {
               '@type': 'Answer',
               text: 'Yes! Once this web page is loaded in your browser, you can turn off your Wi-Fi, cellular data, or enable Airplane Mode. The tool will continue to resize, filter, and download your files completely offline.',
@@ -140,22 +140,22 @@ export default function HomePage() {
 
   const generalFaqs = [
     {
-      question: 'How does FormFit India ensure 100% privacy for sensitive documents?',
+      question: 'How does FormFit ensure 100% privacy for sensitive documents?',
       answer:
         'All image resizing, background whitening, date slate rendering, and JPEG compression execute entirely inside your device memory using HTML5 Canvas and Web Workers. Zero bytes of your photographs, signatures, or caste/identity certificates are ever uploaded to any remote server.',
     },
     {
       question: 'Why do government portals like NSDL PAN and State PSCs reject resized photos?',
       answer:
-        'Government upload validators inspect the binary JFIF (APP0) density metadata header in the JPEG file to confirm it contains exactly 200 DPI or 300 DPI. Standard online photo editors only export at default 72 or 96 DPI. FormFit India automatically injects the verified big-endian DPI header bytes.',
+        'Government upload validators inspect the binary JFIF (APP0) density metadata header in the JPEG file to confirm it contains exactly 200 DPI or 300 DPI. Standard online photo editors only export at default 72 or 96 DPI. FormFit automatically injects the verified big-endian DPI header bytes.',
     },
     {
       question: 'How do you prevent signatures from falling below the minimum KB floor (e.g., 10 KB or 30 KB)?',
       answer:
-        'Clean signatures on white paper compress down to 3 KB–8 KB even at high quality, causing portals like SSC (10–20 KB) and Railway RRB (30–70 KB) to reject them. FormFit India uses intelligent, standards-compliant JPEG Comment (0xFFFE) byte-floor padding so your signature always satisfies the portal minimum size requirement.',
+        'Clean signatures on white paper compress down to 3 KB–8 KB even at high quality, causing portals like SSC (10–20 KB) and Railway RRB (30–70 KB) to reject them. FormFit uses intelligent, standards-compliant JPEG Comment (0xFFFE) byte-floor padding so your signature always satisfies the portal minimum size requirement.',
     },
     {
-      question: 'Can I use FormFit India while completely offline?',
+      question: 'Can I use FormFit while completely offline?',
       answer:
         'Yes! Once this web page is loaded in your browser, you can turn off your Wi-Fi, cellular data, or enable Airplane Mode. The tool will continue to resize, filter, and download your files completely offline.',
     },
@@ -327,7 +327,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why FormFit India vs Other Tools */}
+      {/* Why FormFit vs Other Tools */}
       <section className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 sm:p-8 space-y-6">
         <div className="max-w-2xl">
           <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
@@ -391,7 +391,7 @@ export default function HomePage() {
             Every year, lakhs of competitive examination candidates inadvertently upload sensitive identity artifacts—including clear passport portraits, handwritten signatures, Aadhaar numbers, and category certificates—to unvetted third-party resizing websites. Many of these websites retain uploaded files on remote server disks, exposing candidates to digital identity theft, fraudulent bank account creation, and impersonation scams.
           </p>
           <p>
-            FormFit India was engineered specifically to solve this structural vulnerability. By leveraging HTML5 Canvas, the JavaScript File API, and WebAssembly, our application operates completely client-side inside your browser sandbox. When you select a photo, your browser decodes the bitmap directly into local RAM, crops and scales the pixels, pads binary bytes to satisfy minimum KB thresholds, and streams the compliant JPEG back to your Downloads folder. No server endpoint ever touches your personal files.
+            FormFit was engineered specifically to solve this structural vulnerability. By leveraging HTML5 Canvas, the JavaScript File API, and WebAssembly, our application operates completely client-side inside your browser sandbox. When you select a photo, your browser decodes the bitmap directly into local RAM, crops and scales the pixels, pads binary bytes to satisfy minimum KB thresholds, and streams the compliant JPEG back to your Downloads folder. No server endpoint ever touches your personal files.
           </p>
         </div>
       </section>

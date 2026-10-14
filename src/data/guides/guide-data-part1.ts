@@ -147,8 +147,8 @@ export const guidesPart1: EditorialGuide[] = [
         answer: 'The standard physical dimensions are 3.5 cm width by 4.5 cm height, which corresponds to 276 × 354 pixels at 200 DPI or 413 × 531 pixels at 300 DPI.',
       },
       {
-        question: 'Why does FormFit India not charge any fees or show intrusive popups?',
-        answer: 'FormFit India is an open-source, privacy-first technical utility built to help Indian students format their documents safely without paying cyber cafes or exposing personal ID scans to server vulnerabilities.',
+        question: 'Why does FormFit not charge any fees or show intrusive popups?',
+        answer: 'FormFit is an open-source, privacy-first technical utility built to help Indian students format their documents safely without paying cyber cafes or exposing personal ID scans to server vulnerabilities.',
       },
     ],
   },
@@ -214,7 +214,7 @@ export const guidesPart1: EditorialGuide[] = [
         body: [
           'Many candidates attempt to fix DPI using desktop tools like Photoshop or MS Paint by changing "Image Resolution" to 200 DPI. However, when selecting "Save for Web" or exporting as progressive JPEG, modern image encoders strip non-essential JFIF APP0 markers to save bandwidth, replacing them with EXIF or Adobe XMP metadata.',
           'Because government portal verification scripts look specifically for the legacy JFIF APP0 byte signature rather than complex EXIF tags, the exported image is still rejected.',
-          'FormFit India avoids this issue completely: after encoding the canvas image to baseline JPEG, our binary engine inspects the binary buffer and directly injects the exact 18-byte JFIF APP0 header with unit 1 and 200 or 300 DPI values.',
+          'FormFit avoids this issue completely: after encoding the canvas image to baseline JPEG, our binary engine inspects the binary buffer and directly injects the exact 18-byte JFIF APP0 header with unit 1 and 200 or 300 DPI values.',
         ],
       },
       {
@@ -251,7 +251,7 @@ export const guidesPart1: EditorialGuide[] = [
       },
       {
         question: 'Does FormFit charge any money to convert photos to 200 DPI?',
-        answer: 'No. FormFit India is completely free with zero limits, zero sign-up requirements, and zero watermarks.',
+        answer: 'No. FormFit is completely free with zero limits, zero sign-up requirements, and zero watermarks.',
       },
     ],
   },
@@ -312,7 +312,7 @@ export const guidesPart1: EditorialGuide[] = [
         ],
       },
       {
-        heading: '4. How to Create an SSC-Compliant Signature on FormFit India',
+        heading: '4. How to Create an SSC-Compliant Signature on FormFit',
         subheading: 'Step-by-step instructions to get an exact 15 KB signature file',
         body: [
           'Step 1: Sign in running handwriting with a black or dark blue pen on a clean white unruled paper sheet.',
@@ -337,7 +337,7 @@ export const guidesPart1: EditorialGuide[] = [
       },
       {
         question: 'Why does the SSC portal reject my signature file size?',
-        answer: 'SSC enforces a strict 10 KB to 20 KB boundary. When signatures are cropped closely, ordinary tools compress them to 5–8 KB, which SSC rejects. FormFit India adds compliant byte-floor padding to keep your signature above 10 KB.',
+        answer: 'SSC enforces a strict 10 KB to 20 KB boundary. When signatures are cropped closely, ordinary tools compress them to 5–8 KB, which SSC rejects. FormFit adds compliant byte-floor padding to keep your signature above 10 KB.',
       },
       {
         question: 'Can I wear glasses during the SSC live photo capture?',
@@ -410,7 +410,7 @@ export const guidesPart1: EditorialGuide[] = [
           'If you take a photo of the full A4 page, the file will be 2 MB to 5 MB, which the portal will reject. If you crop too tightly and over-compress, it drops below 50 KB, triggering another rejection error.',
         ],
         table: {
-          headers: ['Technical Parameter', 'Official Specification', 'Common Candidate Error', 'FormFit India Fix'],
+          headers: ['Technical Parameter', 'Official Specification', 'Common Candidate Error', 'FormFit Fix'],
           rows: [
             ['Pixel Dimensions', '800 × 400 pixels (2:1)', 'Uploading tall 3:4 portrait photo', 'Canvas locked strictly to 800 × 400 px'],
             ['File Size Window', '50 KB to 100 KB', 'File size under 50 KB or over 100 KB', 'Compressor converges to 65–85 KB range'],
@@ -421,7 +421,7 @@ export const guidesPart1: EditorialGuide[] = [
       },
       {
         heading: '4. How to Format Your Declaration in 60 Seconds',
-        subheading: 'Simple steps using FormFit India’s Declaration Tool',
+        subheading: 'Simple steps using FormFit’s Declaration Tool',
         body: [
           '1. Write the declaration sentence on unruled white paper with a bold black gel or ballpoint pen.',
           '2. Take a clear overhead photo with your smartphone camera.',
@@ -521,7 +521,7 @@ export const guidesPart1: EditorialGuide[] = [
         ],
       },
       {
-        heading: '4. How to Generate Name and Date on Photo Using FormFit India',
+        heading: '4. How to Generate Name and Date on Photo Using FormFit',
         subheading: 'One-click automated plaque generator with zero server upload',
         body: [
           'Step 1: Open FormFit’s Exam Resizer (e.g., /resize/upsc-cse-ias-photo-signature-resizer or /resize/nta-neet-ug-passport-postcard-resizer).',
@@ -549,7 +549,7 @@ export const guidesPart1: EditorialGuide[] = [
       },
       {
         question: 'Does adding a name and date increase the photo file size above limits?',
-        answer: 'No. FormFit India recalculates the compression quantization after painting the text plaque to ensure the final file remains within the official byte window (e.g., 20–50 KB or 10–200 KB).',
+        answer: 'No. FormFit recalculates the compression quantization after painting the text plaque to ensure the final file remains within the official byte window (e.g., 20–50 KB or 10–200 KB).',
       },
       {
         question: 'Can I write the name and date by hand on the printed photo and scan it?',

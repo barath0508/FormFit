@@ -17,7 +17,7 @@ export function PortalRejectionTroubleshooting({ preset }: PortalRejectionTroubl
         {
           portalMessage: `Image dimensions outside allowed ${photo?.widthPx}x${photo?.heightPx} px bounds.`,
           cause: 'Mobile crops leave arbitrary floating pixel dimensions which server-side validators reject.',
-          solution: `FormFit India automatically locks and renders the canvas to exact ${photo?.widthPx} × ${photo?.heightPx} pixels.`,
+          solution: `FormFit automatically locks and renders the canvas to exact ${photo?.widthPx} × ${photo?.heightPx} pixels.`,
         },
         {
           portalMessage: `File size out of allowed ${sign ? `${sign.minKB}KB - ${sign.maxKB}KB` : 'specified'} range.`,
@@ -53,7 +53,7 @@ export function PortalRejectionTroubleshooting({ preset }: PortalRejectionTroubl
             <tr>
               <th scope="col" className="px-4 py-3 w-1/3">Portal Error Message</th>
               <th scope="col" className="px-4 py-3 w-1/3">Underlying Technical Cause</th>
-              <th scope="col" className="px-4 py-3 w-1/3">FormFit India Solution</th>
+              <th scope="col" className="px-4 py-3 w-1/3">FormFit Solution</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-100 dark:divide-slate-700/60 font-medium">

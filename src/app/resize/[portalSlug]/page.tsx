@@ -32,7 +32,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { portalSlug } = await params;
   const preset = getPresetBySlug(portalSlug);
-  if (!preset) return { title: 'Portal Not Found | FormFit India' };
+  if (!preset) return { title: 'Portal Not Found | FormFit' };
   return buildExamPageMetadata(preset);
 }
 

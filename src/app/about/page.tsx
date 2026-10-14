@@ -4,9 +4,9 @@ import { Metadata } from 'next';
 import { Building2, CheckCircle2, ShieldCheck, UserCheck, Mail, ArrowRight, FileCheck, MapPin } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About FormFit India — Editorial Standards & Civic Utility Mission',
+  title: 'About FormFit — Editorial Standards & Civic Utility Mission',
   description:
-    'Learn about FormFit India, our 3-step methodology for auditing government recruitment notifications, and our zero-server-cost client-side privacy model.',
+    'Learn about FormFit, our 3-step methodology for auditing government recruitment notifications, and our zero-server-cost client-side privacy model.',
   alternates: {
     canonical: 'https://formfit.in/about',
   },
@@ -22,10 +22,10 @@ export default function AboutPage() {
           <span>Independent Civic Technology Initiative</span>
         </div>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-          About FormFit India (formfit.in)
+          About FormFit (formfit.in)
         </h1>
         <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
-          FormFit India was engineered to solve a widespread, stressful problem faced by tens of millions of Indian students,
+          FormFit was engineered to solve a widespread, stressful problem faced by tens of millions of Indian students,
           civil service aspirants, and job applicants every month: rigid, idiosyncratic portal upload rejections.
         </p>
       </header>
@@ -53,7 +53,7 @@ export default function AboutPage() {
             them with deceptive advertising banners.
           </p>
           <p className="font-semibold text-slate-900 dark:text-white">
-            FormFit India is the third, better way: an ultra-fast, 100% private, client-side compliance engine that guarantees
+            FormFit is the third, better way: an ultra-fast, 100% private, client-side compliance engine that guarantees
             zero server uploads and perfect portal compatibility on any budget smartphone.
           </p>
         </div>
@@ -134,7 +134,7 @@ export default function AboutPage() {
           Official Non-Affiliation Notice
         </span>
         <p>
-          FormFit India is an independent educational and civic technology utility. It is not affiliated with,
+          FormFit is an independent educational and civic technology utility. It is not affiliated with,
           sponsored by, or operated by the Union Public Service Commission (UPSC), Staff Selection Commission (SSC),
           National Testing Agency (NTA), Institute of Banking Personnel Selection (IBPS), Unique Identification Authority
           of India (UIDAI), Protean eGov Technologies (NSDL), UTIITSL, or any Central or State Government department.
@@ -146,7 +146,7 @@ export default function AboutPage() {
           href="/"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-xs sm:text-sm shadow-sm transition-colors"
         >
-          <span>Try FormFit India Now</span>
+          <span>Try FormFit Now</span>
           <ArrowRight className="w-4 h-4" />
         </Link>
       </div>

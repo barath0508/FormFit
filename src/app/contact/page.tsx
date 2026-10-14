@@ -33,7 +33,7 @@ export default function ContactPage() {
           <span>Support &amp; Notification Audit Lab</span>
         </div>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-          Contact FormFit India &amp; Report Spec Updates
+          Contact FormFit &amp; Report Spec Updates
         </h1>
         <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
           Has an examination board recently issued a new notification, addendum, or changed dimensional requirements?

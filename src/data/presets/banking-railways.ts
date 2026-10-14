@@ -108,7 +108,7 @@ export const bankingRailwaysPresets: ExamPortalPreset[] = [
       {
         portalMessage: 'Signature file size is invalid. Must be 10 KB to 20 KB.',
         cause: 'Standard image editors compress black-and-white signatures to 5 KB–8 KB, causing IBPS upload rejection.',
-        solution: 'FormFit India automatically calculates the exact byte floor and applies JFIF comment padding to guarantee 10–20 KB output.',
+        solution: 'FormFit automatically calculates the exact byte floor and applies JFIF comment padding to guarantee 10–20 KB output.',
       },
       {
         portalMessage: 'Handwritten declaration file size is outside 50 KB - 100 KB.',
@@ -385,7 +385,7 @@ export const bankingRailwaysPresets: ExamPortalPreset[] = [
         inkColorRule: 'Black ink pen only',
         notes: [
           'Dimensions: 140 x 60 pixels (or 236 x 118 px).',
-          'CRITICAL RULE: RRB portals enforce a 30 KB to 70 KB window for signatures! Typical signature editors export below 30 KB. FormFit India automatically injects safe JFIF comment padding so your signature passes this strict 30 KB minimum.',
+          'CRITICAL RULE: RRB portals enforce a 30 KB to 70 KB window for signatures! Typical signature editors export below 30 KB. FormFit automatically injects safe JFIF comment padding so your signature passes this strict 30 KB minimum.',
           'Must not be in capital letters.',
         ],
       },
@@ -394,13 +394,13 @@ export const bankingRailwaysPresets: ExamPortalPreset[] = [
       {
         portalMessage: 'Signature file size is less than 30 KB.',
         cause: 'Railways portals uniquely enforce an unusually high minimum floor of 30 KB for signatures, which causes 90% of applicants using regular resizers to fail.',
-        solution: 'FormFit India automatically injects standards-compliant JPEG Comment (0xFFFE) padding bytes to bring the signature safely to 45 KB without altering ink pixels.',
+        solution: 'FormFit automatically injects standards-compliant JPEG Comment (0xFFFE) padding bytes to bring the signature safely to 45 KB without altering ink pixels.',
       },
     ],
     faqs: [
       {
         question: 'Why do other online tools fail on RRB signatures?',
-        answer: 'RRB requires signatures to be between 30 KB and 70 KB. Because signatures on white paper have very little visual data, standard tools compress them to 5 KB–15 KB and cannot reach 30 KB. FormFit India solves this with automatic standards-compliant byte padding.',
+        answer: 'RRB requires signatures to be between 30 KB and 70 KB. Because signatures on white paper have very little visual data, standard tools compress them to 5 KB–15 KB and cannot reach 30 KB. FormFit solves this with automatic standards-compliant byte padding.',
       },
       {
         question: 'Can I wear glasses in the RRB railway photo?',
@@ -445,7 +445,7 @@ export const bankingRailwaysPresets: ExamPortalPreset[] = [
         requiresNameAndDate: 'mandatory',
         notes: [
           'Air Force and Agniveer rules mandate holding a black slate in front of chest with candidate name and date of photo written in white chalk.',
-          'FormFit India can digitally render this compliant Name & Date plaque on your photo.',
+          'FormFit can digitally render this compliant Name & Date plaque on your photo.',
           'File size: 10 KB to 50 KB.',
         ],
       },

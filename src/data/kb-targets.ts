@@ -56,7 +56,7 @@ export const KB_TARGETS: KbTarget[] = [
       whyThisSizeExists:
         'The 10KB to 20KB signature file window is the most universally enforced biometric parameter across Indian government recruiting servers (including TCS iON, NIC, and IBPS engines). Examination servers enforce this lower bound (10 KB) to prevent candidates from uploading tiny, unreadable 2 KB thumbnail thumbnails or faint pencil scribbles that fail machine handwriting authentication during exam-hall bio-logging. Simultaneously, the 20 KB ceiling prevents server disk bloat when storing tens of millions of applicant records.',
       compressionMechanics:
-        'When you take a smartphone photo of a signature on clean white paper, the vast majority of the image is uniform white space. Under standard Discrete Cosine Transform (DCT) and run-length encoding in baseline JPEG, uniform white blocks compress exceptionally well. As a consequence, high-contrast signatures frequently compress down to 4 KB to 8 KB—falling below the mandatory 10 KB threshold. FormFit India solves this through an intelligent byte-floor algorithm: if the image compresses below 10 KB, safe non-rendered JFIF comment markers (0xFFFE) are injected into the binary stream until the file reaches the safe 14 KB to 18 KB range.',
+        'When you take a smartphone photo of a signature on clean white paper, the vast majority of the image is uniform white space. Under standard Discrete Cosine Transform (DCT) and run-length encoding in baseline JPEG, uniform white blocks compress exceptionally well. As a consequence, high-contrast signatures frequently compress down to 4 KB to 8 KB—falling below the mandatory 10 KB threshold. FormFit solves this through an intelligent byte-floor algorithm: if the image compresses below 10 KB, safe non-rendered JFIF comment markers (0xFFFE) are injected into the binary stream until the file reaches the safe 14 KB to 18 KB range.',
       stepByStepGuide: [
         'Sign your usual signature on a clean, unruled sheet of white paper using a dark black or blue ballpoint pen.',
         'Capture the photo from your smartphone camera under direct daylight, avoiding phone shadows.',
@@ -93,7 +93,7 @@ export const KB_TARGETS: KbTarget[] = [
     faqs: [
       {
         question: 'Why does my signature file size drop below 10 KB when cropped?',
-        answer: 'Signatures contain very little visual data compared to portraits. Because 90% of the image is pure white background, standard JPEG algorithms compress it efficiently down to 4–8 KB. Since Indian exam portals require at least 10 KB, FormFit India applies safe byte-floor padding to keep it above 10 KB.',
+        answer: 'Signatures contain very little visual data compared to portraits. Because 90% of the image is pure white background, standard JPEG algorithms compress it efficiently down to 4–8 KB. Since Indian exam portals require at least 10 KB, FormFit applies safe byte-floor padding to keep it above 10 KB.',
       },
       {
         question: 'Which exams require a 10KB to 20KB signature?',
@@ -108,8 +108,8 @@ export const KB_TARGETS: KbTarget[] = [
         answer: 'No. Government examination boards explicitly reject signatures written in block or CAPITAL letters. The signature must be in your normal running handwriting.',
       },
       {
-        question: 'Does FormFit India upload my signature to a remote server?',
-        answer: 'No! FormFit India operates 100% client-side in your browser memory. Your signature never leaves your phone or computer, protecting you from identity theft.',
+        question: 'Does FormFit upload my signature to a remote server?',
+        answer: 'No! FormFit operates 100% client-side in your browser memory. Your signature never leaves your phone or computer, protecting you from identity theft.',
       },
       {
         question: 'Can I resize my signature on an Android phone or iPhone?',
@@ -170,7 +170,7 @@ export const KB_TARGETS: KbTarget[] = [
       {
         portalMessage: 'Photo file size is greater than 50 KB.',
         cause: 'Smartphone photos carry rich color data and high-frequency noise that keeps file size high.',
-        solution: 'FormFit India automatically compresses the image using optimized quantization tables to guarantee size under 48 KB.',
+        solution: 'FormFit automatically compresses the image using optimized quantization tables to guarantee size under 48 KB.',
       },
       {
         portalMessage: 'Photo file size is less than 20 KB.',
@@ -197,7 +197,7 @@ export const KB_TARGETS: KbTarget[] = [
       },
       {
         question: 'Is my photo uploaded to any server during compression?',
-        answer: 'No. FormFit India processes images 100% locally in your web browser. No photos are ever uploaded or stored on any server.',
+        answer: 'No. FormFit processes images 100% locally in your web browser. No photos are ever uploaded or stored on any server.',
       },
       {
         question: 'Can I compress photos directly from my smartphone gallery?',
@@ -407,7 +407,7 @@ export const KB_TARGETS: KbTarget[] = [
       {
         portalMessage: 'RRB Portal: Signature size is less than 30 KB.',
         cause: 'Signatures on white paper naturally compress to 8–18 KB.',
-        solution: 'FormFit India automatically pads the file stream to guarantee it lands at 45–55 KB.',
+        solution: 'FormFit automatically pads the file stream to guarantee it lands at 45–55 KB.',
       },
     ],
     faqs: [
@@ -417,7 +417,7 @@ export const KB_TARGETS: KbTarget[] = [
       },
       {
         question: 'How do I increase my signature size to 30KB for Railway exams?',
-        answer: 'FormFit India automatically detects when your signature is below 30 KB and injects safe, non-destructive padding bytes to bring it safely between 40 KB and 60 KB.',
+        answer: 'FormFit automatically detects when your signature is below 30 KB and injects safe, non-destructive padding bytes to bring it safely between 40 KB and 60 KB.',
       },
       {
         question: 'What are the photo dimensions for RRB NTPC?',

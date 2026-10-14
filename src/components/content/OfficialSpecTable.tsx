@@ -86,7 +86,7 @@ export function OfficialSpecTable({
       <div className="p-4 bg-slate-50/50 dark:bg-slate-900/30 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400 flex items-start gap-2">
         <Info className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
         <span>
-          FormFit India automatically verifies your output file against every row in this table. If a portal releases
+          FormFit automatically verifies your output file against every row in this table. If a portal releases
           an emergency corrigendum, use the &ldquo;Customize Dimensions &amp; KB Limits&rdquo; drawer above to override any value.
         </span>
       </div>

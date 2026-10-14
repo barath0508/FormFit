@@ -2,7 +2,7 @@
 
 **Privacy-First Client-Side Exam & Government Portal Photo, Signature, and Document Compliance Engine**
 
-FormFit India (`formfit.in`) is an open-source, privacy-first image and document formatting utility engineered for Indian competitive examinations (UPSC, SSC, IBPS, SBI, RRB, NTA JEE/NEET/CUET, GATE) and civic portals (PAN Card via NSDL/UTIITSL, Aadhaar, Passport Seva).
+FormFit (`formfit.in`) is an open-source, privacy-first image and document formatting utility engineered for Indian competitive examinations (UPSC, SSC, IBPS, SBI, RRB, NTA JEE/NEET/CUET, GATE) and civic portals (PAN Card via NSDL/UTIITSL, Aadhaar, Passport Seva).
 
 ## Key Features
 

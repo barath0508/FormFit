@@ -107,7 +107,7 @@ export const upscSscPresets: ExamPortalPreset[] = [
     faqs: [
       {
         question: 'Is Name and Date of Photograph mandatory for UPSC CSE & OTR?',
-        answer: 'Yes. Recent UPSC notifications mandate that the candidate full name and date on which the photograph was taken (DOP) must be clearly printed at the bottom of the photo. FormFit India generates this compliant plaque automatically.',
+        answer: 'Yes. Recent UPSC notifications mandate that the candidate full name and date on which the photograph was taken (DOP) must be clearly printed at the bottom of the photo. FormFit generates this compliant plaque automatically.',
       },
       {
         question: 'What are the exact pixel dimensions accepted by UPSC?',
@@ -199,7 +199,7 @@ export const upscSscPresets: ExamPortalPreset[] = [
       {
         portalMessage: 'Signature file size is less than 10 KB or greater than 20 KB.',
         cause: 'Signatures naturally compress down to 4–8 KB on clean white paper, which standard resizers fail to pad.',
-        solution: 'FormFit India automatically injects safe JFIF comment padding to guarantee the file lands safely around 15–18 KB.',
+        solution: 'FormFit automatically injects safe JFIF comment padding to guarantee the file lands safely around 15–18 KB.',
       },
       {
         portalMessage: 'Signature image is blurred or illegible.',
@@ -214,7 +214,7 @@ export const upscSscPresets: ExamPortalPreset[] = [
     faqs: [
       {
         question: 'Why does my SSC signature get rejected for file size?',
-        answer: 'SSC enforces a very narrow byte-size window: strictly between 10 KB and 20 KB. A clean scanned signature often compresses below 10 KB (e.g. 7 KB), which SSC rejects. FormFit India uses intelligent byte-floor padding to ensure your file is safely inside 10–20 KB.',
+        answer: 'SSC enforces a very narrow byte-size window: strictly between 10 KB and 20 KB. A clean scanned signature often compresses below 10 KB (e.g. 7 KB), which SSC rejects. FormFit uses intelligent byte-floor padding to ensure your file is safely inside 10–20 KB.',
       },
       {
         question: 'Does SSC CGL require uploading a photo file?',
@@ -233,7 +233,7 @@ export const upscSscPresets: ExamPortalPreset[] = [
         answer: 'No. Signatures in capital letters are strictly rejected by the Commission.',
       },
       {
-        question: 'Does FormFit India upload my signature to any server?',
+        question: 'Does FormFit upload my signature to any server?',
         answer: 'No. All image scaling, paper whitening, and byte padding occur entirely on your device memory.',
       },
     ],

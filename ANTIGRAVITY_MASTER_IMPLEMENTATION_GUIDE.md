@@ -1,10 +1,10 @@
 # ANTIGRAVITY MASTER IMPLEMENTATION GUIDE
-## FormFit India (`formfit.in`)
+## FormFit (`formfit.in`)
 ### Privacy-First Client-Side Exam & Government Portal Photo, Signature, and Document Compliance Engine
 
 ---
 
-**Project Name:** FormFit India  
+**Project Name:** FormFit  
 **Production Domain:** `formfit.in`  
 **Product Category:** Privacy-First Client-Side Exam & Government Portal Photo, Signature, and Document Compliance Engine  
 **Target Market:** India (UPSC, SSC, IBPS, SBI, RRB, NTA JEE/NEET/CUET, GATE, State PSCs, UIDAI Aadhaar, NSDL/UTIITSL PAN, Passport Seva)  
@@ -26,17 +26,17 @@ Each portal enforces rigid, idiosyncratic validation rules on uploaded images an
 4. **Name & Date of Photo (DOP) Slates:** SSC, UPSC, and State PSC notifications frequently mandate that the candidate's full name and the date the photograph was taken be printed clearly at the bottom of the photograph.
 5. **Severe Privacy & Security Risks of Existing Tools:** Existing online resizers upload sensitive personal photographs, signatures, and identity documents (caste certificates, disability certificates, ID proofs) to unverified remote servers, inject intrusive adware, or fail to hit minimum KB floors.
 
-### 1.2 Why Users Will Choose FormFit India Over Alternatives
+### 1.2 Why Users Will Choose FormFit Over Alternatives
 * **100% Client-Side Zero-Upload Guarantee:** All decoding, cropping, background contrast adjustment, Name/Date slate rendering, DPI byte injection, and PDF packaging occur inside the user's browser memory via HTML5 Canvas and Web Workers. Zero bytes of user media ever leave the device.
-* **Exact KB Window Binary-Search Compressor (With Byte-Padding Floor):** If a portal requires 20 KB to 50 KB and a clean white-background signature compresses to 8 KB even at JPEG quality 1.0, standard tools fail. FormFit India uses a deterministic binary search over JPEG quantization quality (0.10 to 0.99) combined with safe, standards-compliant JFIF comment (`0xFFFE`) padding when an image naturally falls below a portal's minimum KB threshold.
+* **Exact KB Window Binary-Search Compressor (With Byte-Padding Floor):** If a portal requires 20 KB to 50 KB and a clean white-background signature compresses to 8 KB even at JPEG quality 1.0, standard tools fail. FormFit uses a deterministic binary search over JPEG quantization quality (0.10 to 0.99) combined with safe, standards-compliant JFIF comment (`0xFFFE`) padding when an image naturally falls below a portal's minimum KB threshold.
 * **True Binary DPI Header Injection:** Automatically patches the output JPEG `APP0` (JFIF) density bytes to the exact required DPI (200 DPI or 300 DPI) so legacy government validators pass the file on the first attempt.
 * **Built-In Name & Date-on-Photo Composer:** One-click toggle that renders a regulatory-compliant bottom plaque (white background with black bold uppercase text, or black bar with white text) containing the candidate's name and capture date.
 * **Verified Official Notification Registry:** Every preset links directly to the official exam notification PDF clause and displays the last verification date.
 
 ### 1.3 Documented Assumptions, Dependencies, and Limitations
 * **Assumption 1 (Zero Server-Side Image Processing):** All image and PDF manipulation runs on the client device. The hosting environment serves only static HTML, JS, CSS, and JSON assets (compatible with Cloudflare Pages, Vercel Static/Edge, or AWS S3 + CloudFront).
-* **Assumption 2 (Background Removal Scope):** Full AI neural background segmentation (e.g., 40 MB ONNX models) degrades mobile performance on budget Indian Android devices and violates Core Web Vitals on 4G networks. FormFit India includes a Smart Signature & Document Adaptive Threshold/Contrast Whiten Filter (turning grey/shadowed paper backgrounds on signatures into pure `#FFFFFF` white) and brightness/contrast normalization for photos. Neural background removal is deferred to an optional on-demand lazy-loaded module in Phase 2.
-* **Assumption 3 (Live Camera Photo Capture Mandate):** Certain portals (such as SSC's live webcam capture module on `ssc.gov.in`) require live capture during the form session for the photo, while still requiring uploaded pre-sized signature files (10 KB–20 KB, 4.0 cm × 2.0 cm). FormFit India explicitly displays a portal advisory banner when an exam uses live capture for photos so candidates are never misled.
+* **Assumption 2 (Background Removal Scope):** Full AI neural background segmentation (e.g., 40 MB ONNX models) degrades mobile performance on budget Indian Android devices and violates Core Web Vitals on 4G networks. FormFit includes a Smart Signature & Document Adaptive Threshold/Contrast Whiten Filter (turning grey/shadowed paper backgrounds on signatures into pure `#FFFFFF` white) and brightness/contrast normalization for photos. Neural background removal is deferred to an optional on-demand lazy-loaded module in Phase 2.
+* **Assumption 3 (Live Camera Photo Capture Mandate):** Certain portals (such as SSC's live webcam capture module on `ssc.gov.in`) require live capture during the form session for the photo, while still requiring uploaded pre-sized signature files (10 KB–20 KB, 4.0 cm × 2.0 cm). FormFit explicitly displays a portal advisory banner when an exam uses live capture for photos so candidates are never misled.
 * **Limitation 1 (Client RAM Ceiling):** Devices with less than 2 GB RAM may crash if decoding corrupt 100 MP raw images. Input files are capped at 25 MB and 8192 × 8192 px maximum source resolution.
 
 ---
@@ -82,7 +82,7 @@ Each portal enforces rigid, idiosyncratic validation rules on uploaded images an
 
 ## 3. Competitor and Opportunity Analysis
 
-| Competitor Category | Representative Examples | Public Strengths | Technical & UX Weaknesses | FormFit India Advantage |
+| Competitor Category | Representative Examples | Public Strengths | Technical & UX Weaknesses | FormFit Advantage |
 | :--- | :--- | :--- | :--- | :--- |
 | **Generic Global Resizers** | ReduceImages, ILoveIMG, SimpleImageResizer | High domain authority; fast basic scaling. | No Indian exam presets; cannot guarantee minimum KB floor; does not inject DPI headers; uploads photos to remote servers. | Pre-loaded verified Indian exam specs; strict `[minKB, maxKB]` guarantee; 100% browser-local execution. |
 | **Indian Sarkari Utility Clones** | ImResizer, SarkariResult tools, Photocrops | Ranked for specific exam keywords; familiar to cyber-cafe operators. | Cluttered with deceptive "Download" ad banners; jarring CLS layout shifts; outdated exam specs from 2021–2023; broken mobile crop touch handling. | Zero deceptive UI; zero layout shift ($\text{CLS} \le 0.02$); verified 2026 official circular metadata; mobile-first touch ergonomics. |

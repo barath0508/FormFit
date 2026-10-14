@@ -4,9 +4,9 @@ import { Metadata } from 'next';
 import { Scale, CheckCircle2, AlertTriangle, ShieldCheck } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service & Candidate Responsibility Agreement | FormFit India',
+  title: 'Terms of Service & Candidate Responsibility Agreement | FormFit',
   description:
-    'Terms of service for FormFit India. Learn about our free utility scope, candidate portal preview verification duties, and intellectual property terms.',
+    'Terms of service for FormFit. Learn about our free utility scope, candidate portal preview verification duties, and intellectual property terms.',
   alternates: {
     canonical: 'https://formfit.in/terms',
   },
@@ -25,7 +25,7 @@ export default function TermsPage() {
           Terms of Service
         </h1>
         <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
-          Last revised: March 2026. Please read these terms carefully before utilizing FormFit India (formfit.in).
+          Last revised: March 2026. Please read these terms carefully before utilizing FormFit (formfit.in).
           By accessing this technical utility, you agree to comply with the operational conditions outlined herein.
         </p>
       </header>
@@ -36,12 +36,12 @@ export default function TermsPage() {
           1. Scope of the Free Utility Service
         </h2>
         <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-          FormFit India provides a browser-based, client-side digital image manipulation utility designed to assist Indian
+          FormFit provides a browser-based, client-side digital image manipulation utility designed to assist Indian
           citizens, job applicants, and students in formatting photographs, scanned signatures, and PDF documents to match
           the technical pixel dimensions, DPI metadata, and file size limits required by government recruitment and entrance portals.
         </p>
         <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-          FormFit India is provided free of charge for personal, non-commercial use. No account registration or payment
+          FormFit is provided free of charge for personal, non-commercial use. No account registration or payment
           is required to access the image processing workbench or compliance tools.
         </p>
       </section>
@@ -55,7 +55,7 @@ export default function TermsPage() {
           </h2>
         </div>
         <p className="text-xs sm:text-sm text-amber-900 dark:text-amber-300 leading-relaxed">
-          While FormFit India’s Document Compliance Lab audits exam specifications against active official gazette
+          While FormFit’s Document Compliance Lab audits exam specifications against active official gazette
           notifications and examination brochures (.gov.in / .nic.in), <strong>the candidate remains solely and
           ultimately responsible for verifying the visual legibility, framing, and acceptance of their file on the
           official government portal before final fee payment and application submission</strong>.
@@ -74,7 +74,7 @@ export default function TermsPage() {
         </h2>
         <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
           All original editorial articles, mathematical conversion formulas, UI designs, codebases, and curated
-          specifications matrices published on FormFit India are protected under intellectual property and copyright laws.
+          specifications matrices published on FormFit are protected under intellectual property and copyright laws.
         </p>
         <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
           You agree not to use automated bots, scrapers, or headless browsers to mass-scrape our database of presets,
@@ -88,8 +88,8 @@ export default function TermsPage() {
           4. Disclaimer of Warranties &amp; Limitation of Liability
         </h2>
         <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-          FormFit India is provided on an &quot;AS IS&quot; and &quot;AS AVAILABLE&quot; basis without warranties of any kind, whether
-          express or implied. Under no circumstances shall FormFit India, its developers, or contributors be held
+          FormFit is provided on an &quot;AS IS&quot; and &quot;AS AVAILABLE&quot; basis without warranties of any kind, whether
+          express or implied. Under no circumstances shall FormFit, its developers, or contributors be held
           liable for any direct, indirect, incidental, consequential, or punitive damages arising from the rejection,
           scrutiny objection, or disqualification of an examination application by any government commission or testing agency.
         </p>

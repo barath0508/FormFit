@@ -79,7 +79,7 @@ export const DIMENSION_TARGETS: DimensionTarget[] = [
       {
         portalMessage: 'Image dimensions must be 200 x 230 pixels.',
         cause: 'Uploading a standard 3.5 × 4.5 cm photo (275 × 354 px) instead of the exact 200 × 230 pixel size.',
-        solution: 'FormFit India automatically rescales your crop to exactly 200 pixels width by 230 pixels height.',
+        solution: 'FormFit automatically rescales your crop to exactly 200 pixels width by 230 pixels height.',
       },
       {
         portalMessage: 'File size is less than 20 KB or exceeds 50 KB.',
@@ -110,7 +110,7 @@ export const DIMENSION_TARGETS: DimensionTarget[] = [
       },
       {
         question: 'Is my photograph uploaded to any server?',
-        answer: 'No. FormFit India is a 100% client-side privacy tool. All image cropping and scaling occur exclusively in your browser memory.',
+        answer: 'No. FormFit is a 100% client-side privacy tool. All image cropping and scaling occur exclusively in your browser memory.',
       },
     ],
   },
@@ -166,7 +166,7 @@ export const DIMENSION_TARGETS: DimensionTarget[] = [
       {
         portalMessage: 'Signature dimensions must be 140 x 60 pixels.',
         cause: 'Uploading arbitrary crops (e.g. 300 × 120 px or 200 × 100 px).',
-        solution: 'FormFit India automatically scales and renders the signature to exact 140 × 60 pixels.',
+        solution: 'FormFit automatically scales and renders the signature to exact 140 × 60 pixels.',
       },
       {
         portalMessage: 'Signature size is below 10 KB.',
@@ -181,7 +181,7 @@ export const DIMENSION_TARGETS: DimensionTarget[] = [
       },
       {
         question: 'Why does my 140x60 signature drop below 10 KB?',
-        answer: 'Because signatures contain very few pixels with visual information (most of the image is white space), JPEG algorithms compress them down to 4–8 KB. FormFit India automatically adds safe byte-padding so the file stays above 10 KB.',
+        answer: 'Because signatures contain very few pixels with visual information (most of the image is white space), JPEG algorithms compress them down to 4–8 KB. FormFit automatically adds safe byte-padding so the file stays above 10 KB.',
       },
       {
         question: 'Can I sign in CAPITAL letters for 140x60 signatures?',
@@ -333,7 +333,7 @@ export const DIMENSION_TARGETS: DimensionTarget[] = [
       {
         portalMessage: 'NSDL PAN Portal: Resolution of photograph must be 200 DPI.',
         cause: 'Standard phone and web apps save images with 72 DPI or 96 DPI header flags.',
-        solution: 'FormFit India automatically injects the exact 200 DPI JFIF binary segment into every generated JPEG.',
+        solution: 'FormFit automatically injects the exact 200 DPI JFIF binary segment into every generated JPEG.',
       },
     ],
     faqs: [
@@ -430,7 +430,7 @@ export const DIMENSION_TARGETS: DimensionTarget[] = [
       },
       {
         question: 'Do I need Java or the old UTI Crop Utility?',
-        answer: 'No! FormFit India runs modern HTML5 image math directly inside your browser without needing any Java plugins or desktop downloads.',
+        answer: 'No! FormFit runs modern HTML5 image math directly inside your browser without needing any Java plugins or desktop downloads.',
       },
       {
         question: 'What is the maximum file size for UTIITSL photo?',
@@ -496,7 +496,7 @@ export const DIMENSION_TARGETS: DimensionTarget[] = [
       {
         portalMessage: 'Postcard photo dimensions not within allowed limits.',
         cause: 'Uploading standard passport ratio (3.5:4.5) instead of true 4:6 (2:3) postcard ratio.',
-        solution: 'FormFit India automatically configures the canvas to exactly 800 × 1200 pixels.',
+        solution: 'FormFit automatically configures the canvas to exactly 800 × 1200 pixels.',
       },
       {
         portalMessage: 'Candidate photograph missing Name or Date of Photograph.',

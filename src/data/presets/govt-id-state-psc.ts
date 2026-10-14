@@ -86,7 +86,7 @@ export const govtIdStatePscPresets: ExamPortalPreset[] = [
       {
         portalMessage: 'Image resolution is not 200 DPI.',
         cause: 'Most mobile photo editing apps strip JFIF metadata or output generic 72/96 DPI screen headers.',
-        solution: 'FormFit India directly rewrites bytes 13–17 of the JPEG JFIF APP0 segment to inject true binary 200 DPI density.',
+        solution: 'FormFit directly rewrites bytes 13–17 of the JPEG JFIF APP0 segment to inject true binary 200 DPI density.',
       },
       {
         portalMessage: 'Image size exceeds 50 KB or dimensions mismatch 2.5 x 3.5 cm.',
@@ -107,7 +107,7 @@ export const govtIdStatePscPresets: ExamPortalPreset[] = [
     faqs: [
       {
         question: 'Why does the NSDL PAN portal reject photos that match the pixel dimensions?',
-        answer: 'The NSDL portal does not just check pixel width and height; its backend inspects the binary JFIF (APP0) header of the JPEG file to confirm it contains exactly 200 DPI metadata. FormFit India automatically injects this exact 200 DPI header byte sequence.',
+        answer: 'The NSDL portal does not just check pixel width and height; its backend inspects the binary JFIF (APP0) header of the JPEG file to confirm it contains exactly 200 DPI metadata. FormFit automatically injects this exact 200 DPI header byte sequence.',
       },
       {
         question: 'What are the exact dimensions in centimeters for NSDL PAN?',
@@ -194,7 +194,7 @@ export const govtIdStatePscPresets: ExamPortalPreset[] = [
       {
         portalMessage: 'Photo dimensions are not 213x213 pixels or DPI is not 300.',
         cause: 'UTIITSL has an automated binary validator checking for exact 213x213 dimensions and 300 DPI density tag.',
-        solution: 'FormFit India locks canvas rendering precisely to 213 × 213 pixels with a 300 DPI JFIF segment.',
+        solution: 'FormFit locks canvas rendering precisely to 213 × 213 pixels with a 300 DPI JFIF segment.',
       },
       {
         portalMessage: 'Signature file size is above 60 KB or DPI is incorrect.',
@@ -221,7 +221,7 @@ export const govtIdStatePscPresets: ExamPortalPreset[] = [
       },
       {
         question: 'Do I need to download the official UTI Crop Utility?',
-        answer: 'No! The UTI official crop utility requires outdated Java runtime installations. FormFit India runs modern HTML5 image math directly inside your browser without any plugins.',
+        answer: 'No! The UTI official crop utility requires outdated Java runtime installations. FormFit runs modern HTML5 image math directly inside your browser without any plugins.',
       },
       {
         question: 'Can I upload a signature with blue ink for UTI PAN?',
@@ -275,7 +275,7 @@ export const govtIdStatePscPresets: ExamPortalPreset[] = [
       {
         portalMessage: 'File size exceeds 2 MB limit.',
         cause: 'Smartphone camera photos of electricity bills or ration cards saved as PDF frequently reach 4–8 MB.',
-        solution: 'FormFit India recompresses high-res pages to 200 DPI, bringing files smoothly under 1.5 MB.',
+        solution: 'FormFit recompresses high-res pages to 200 DPI, bringing files smoothly under 1.5 MB.',
       },
       {
         portalMessage: 'Document image is blurred or illegible.',
@@ -298,7 +298,7 @@ export const govtIdStatePscPresets: ExamPortalPreset[] = [
       },
       {
         question: 'Why should I never upload my Aadhaar card to random online resizers?',
-        answer: 'Most online file converters upload your sensitive identity documents to third-party cloud servers where they may be logged or leaked. FormFit India runs 100% client-side in browser RAM—your documents never leave your device.',
+        answer: 'Most online file converters upload your sensitive identity documents to third-party cloud servers where they may be logged or leaked. FormFit runs 100% client-side in browser RAM—your documents never leave your device.',
       },
       {
         question: 'What documents are accepted as POI and POA for Aadhaar?',
@@ -376,7 +376,7 @@ export const govtIdStatePscPresets: ExamPortalPreset[] = [
       {
         portalMessage: 'Parivahan Sarathi: Signature size must be between 10 KB and 20 KB.',
         cause: 'Signatures compressed to 5–9 KB fail the Parivahan minimum file size check.',
-        solution: 'FormFit India automatically injects padding bytes to guarantee the final file is between 12 KB and 18 KB.',
+        solution: 'FormFit automatically injects padding bytes to guarantee the final file is between 12 KB and 18 KB.',
       },
       {
         portalMessage: 'Background color must be plain white.',
@@ -411,7 +411,7 @@ export const govtIdStatePscPresets: ExamPortalPreset[] = [
       },
       {
         question: 'Is my photograph uploaded to any server?',
-        answer: 'No. FormFit India runs all resizing algorithms inside your browser memory, guaranteeing total privacy for civic identity documents.',
+        answer: 'No. FormFit runs all resizing algorithms inside your browser memory, guaranteeing total privacy for civic identity documents.',
       },
     ],
   },
@@ -479,7 +479,7 @@ export const govtIdStatePscPresets: ExamPortalPreset[] = [
       {
         portalMessage: 'Candidate photograph does not contain Name and Date of photo.',
         cause: 'Uploading a plain photo without the mandatory TNPSC text plaque at the bottom.',
-        solution: 'FormFit India automatically embeds candidate name and DOP in bold uppercase letters on a crisp white banner.',
+        solution: 'FormFit automatically embeds candidate name and DOP in bold uppercase letters on a crisp white banner.',
       },
       {
         portalMessage: 'Signature file size is out of 10 KB - 20 KB range.',
@@ -513,7 +513,7 @@ export const govtIdStatePscPresets: ExamPortalPreset[] = [
         answer: 'Yes, TNPSC permits blue or black ballpoint pen on clean white unruled paper.',
       },
       {
-        question: 'Does FormFit India run safely on mobile browsers in Tamil Nadu?',
+        question: 'Does FormFit run safely on mobile browsers in Tamil Nadu?',
         answer: 'Yes! FormFit is completely responsive and runs smoothly on all Android and iOS smartphones without installing any apps.',
       },
     ],
@@ -623,7 +623,7 @@ export const govtIdStatePscPresets: ExamPortalPreset[] = [
         answer: 'UPSSSC PET requires a 3.5 × 4.5 cm photograph (20–50 KB) and signature (10–20 KB) in clear JPG format.',
       },
       {
-        question: 'Can I join photo and signature using FormFit India?',
+        question: 'Can I join photo and signature using FormFit?',
         answer: 'Yes! FormFit includes a dedicated Photo + Signature Joiner built directly into the UPPSC preset.',
       },
       {
@@ -717,7 +717,7 @@ export const govtIdStatePscPresets: ExamPortalPreset[] = [
       {
         portalMessage: 'Signature file size exceeds 20 KB (or 15 KB on CSBC).',
         cause: 'Uploading raw high-resolution signature crops.',
-        solution: 'FormFit India automatically dials signature compression into the 11–14 KB sweet spot.',
+        solution: 'FormFit automatically dials signature compression into the 11–14 KB sweet spot.',
       },
       {
         portalMessage: 'Photo file size is less than 15 KB.',
@@ -751,7 +751,7 @@ export const govtIdStatePscPresets: ExamPortalPreset[] = [
         answer: 'Recent BPSC notifications recommend candidate name and DOP on the photograph.',
       },
       {
-        question: 'Is FormFit India completely free for Bihar students?',
+        question: 'Is FormFit completely free for Bihar students?',
         answer: 'Yes! FormFit is 100% free with unlimited photo and signature resizes and zero sign-up requirements.',
       },
     ],
@@ -817,7 +817,7 @@ export const govtIdStatePscPresets: ExamPortalPreset[] = [
       {
         portalMessage: 'MPSC Profile: Image dimensions outside 125-160px width or 150-200px height.',
         cause: 'MPSC uses a strict pixel-range filter that rejects typical high-definition smartphone images.',
-        solution: 'FormFit India automatically renders your image into MPSC’s calibrated pixel window.',
+        solution: 'FormFit automatically renders your image into MPSC’s calibrated pixel window.',
       },
       {
         portalMessage: 'File size is less than 20 KB on MPSC portal.',
@@ -919,7 +919,7 @@ export const govtIdStatePscPresets: ExamPortalPreset[] = [
       {
         portalMessage: 'RPSC SSO: Photo size is less than 50 KB.',
         cause: 'Rajasthan SSO portal uniquely enforces a minimum 50 KB threshold (most other exams use 20 KB).',
-        solution: 'FormFit India automatically increases JPEG quality and injects metadata padding to keep the file between 60 KB and 90 KB.',
+        solution: 'FormFit automatically increases JPEG quality and injects metadata padding to keep the file between 60 KB and 90 KB.',
       },
       {
         portalMessage: 'Signature file size is less than 20 KB.',
@@ -953,8 +953,8 @@ export const govtIdStatePscPresets: ExamPortalPreset[] = [
         answer: 'No. RPSC official instructions state that the candidate must sign using a black ink pen on clean white unruled paper.',
       },
       {
-        question: 'Does FormFit India share my photos with any government or commercial servers?',
-        answer: 'No. FormFit India is an independent client-side utility. No photos, signatures, or documents are ever uploaded to any server.',
+        question: 'Does FormFit share my photos with any government or commercial servers?',
+        answer: 'No. FormFit is an independent client-side utility. No photos, signatures, or documents are ever uploaded to any server.',
       },
     ],
   },

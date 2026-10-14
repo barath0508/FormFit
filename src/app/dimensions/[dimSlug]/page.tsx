@@ -37,7 +37,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { dimSlug } = await params;
   const target = getDimensionTargetBySlug(dimSlug);
-  if (!target) return { title: 'Dimension Converter Not Found | FormFit India' };
+  if (!target) return { title: 'Dimension Converter Not Found | FormFit' };
   return buildDimensionPageMetadata(target);
 }
 
@@ -223,7 +223,7 @@ export default async function DimensionTargetPage({ params }: PageProps) {
                 <tr>
                   <th scope="col" className="px-4 py-3">Portal Error Message</th>
                   <th scope="col" className="px-4 py-3">Root Cause</th>
-                  <th scope="col" className="px-4 py-3">FormFit India Solution</th>
+                  <th scope="col" className="px-4 py-3">FormFit Solution</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100 dark:divide-slate-700/60 font-medium">
@@ -260,7 +260,7 @@ export default async function DimensionTargetPage({ params }: PageProps) {
             <ul className="list-disc list-inside space-y-1.5 pl-2 text-slate-600 dark:text-slate-400">
               <li><strong>Diffuse Ambient Lighting:</strong> Avoid direct overhead harsh ceiling lights or camera flashes, which cast sharp shadows behind ears or wash out facial contours. Position yourself facing a large window with soft indirect daylight.</li>
               <li><strong>Parallel Sensor Alignment:</strong> Keep your smartphone perfectly parallel to your face or signature paper to prevent keystone distortion, which skews the true {target.aspectRatio} aspect ratio.</li>
-              <li><strong>High-Resolution Decoupled Downsampling:</strong> FormFit India utilizes multi-pass bilinear interpolation on the HTML5 Canvas to downsample your high-resolution original directly into the locked {target.widthPx} × {target.heightPx} pixel buffer, preserving anti-aliased edges and true black signature ink density.</li>
+              <li><strong>High-Resolution Decoupled Downsampling:</strong> FormFit utilizes multi-pass bilinear interpolation on the HTML5 Canvas to downsample your high-resolution original directly into the locked {target.widthPx} × {target.heightPx} pixel buffer, preserving anti-aliased edges and true black signature ink density.</li>
               <li><strong>Zero Lossy Re-encoding:</strong> Once cropped to exact dimensions, our engine performs a binary sweep to embed the required {target.dpi} DPI header and calibrates JPEG quantization tables to keep the final output comfortably within {target.minKB} KB to {target.maxKB} KB without introducing blocky compression artifacts.</li>
             </ul>
           </div>

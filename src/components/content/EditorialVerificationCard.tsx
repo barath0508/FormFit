@@ -75,7 +75,7 @@ export function EditorialVerificationCard({
 
       <div className="mt-5 pt-4 border-t border-slate-200 dark:border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-slate-500 dark:text-slate-400">
         <p>
-          FormFit India conducts weekly 3-step verification audits against active exam brochures (.gov.in / .nic.in).
+          FormFit conducts weekly 3-step verification audits against active exam brochures (.gov.in / .nic.in).
         </p>
         <Link
           href="/contact"

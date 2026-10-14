@@ -60,7 +60,7 @@ export function CookieConsentBanner() {
       </div>
 
       <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-        FormFit India processes your photos, signatures, and PDFs <strong>100% inside your browser RAM</strong>. Files are never uploaded to any server. We and third-party vendors (including Google) use cookies to serve relevant advertisements and analyze traffic under Google Consent Mode v2 and India&apos;s DPDP Act.
+        FormFit processes your photos, signatures, and PDFs <strong>100% inside your browser RAM</strong>. Files are never uploaded to any server. We and third-party vendors (including Google) use cookies to serve relevant advertisements and analyze traffic under Google Consent Mode v2 and India&apos;s DPDP Act.
       </p>
 
       <div className="mt-4 flex items-center justify-between gap-3">

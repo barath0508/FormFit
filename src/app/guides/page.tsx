@@ -6,16 +6,16 @@ import { AdSlot } from '@/components/monetization/AdSlot';
 import { BookOpen, Clock, User, ArrowRight, ShieldCheck, Sparkles } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Official Document Compliance & Exam Guides Hub | FormFit India',
+  title: 'Official Document Compliance & Exam Guides Hub | FormFit',
   description: 'Comprehensive, engineer-verified editorial guides covering photo resizing, signature background cleaning, 200 DPI conversion, and portal rejection fixes.',
   alternates: {
     canonical: 'https://formfit.in/guides',
   },
   openGraph: {
-    title: 'Official Document Compliance & Exam Guides Hub | FormFit India',
+    title: 'Official Document Compliance & Exam Guides Hub | FormFit',
     description: 'Comprehensive, engineer-verified editorial guides covering photo resizing, signature background cleaning, 200 DPI conversion, and portal rejection fixes.',
     url: 'https://formfit.in/guides',
-    siteName: 'FormFit India',
+    siteName: 'FormFit',
     locale: 'en_IN',
     type: 'website',
   },

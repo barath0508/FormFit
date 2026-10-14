@@ -45,9 +45,9 @@ export const guidesPart2: EditorialGuide[] = [
       },
       {
         heading: '3. The Technical Math of Adaptive Paper Whitening',
-        subheading: 'How FormFit India uses perceptual luminance and dynamic thresholding',
+        subheading: 'How FormFit uses perceptual luminance and dynamic thresholding',
         body: [
-          'FormFit India contains an integrated client-side Paper Whitening filter designed specifically for Indian signatures. The filter processes every pixel on the HTML5 Canvas through a mathematical luminance formula:',
+          'FormFit contains an integrated client-side Paper Whitening filter designed specifically for Indian signatures. The filter processes every pixel on the HTML5 Canvas through a mathematical luminance formula:',
           'Luminance (L) = 0.299 × R + 0.587 × G + 0.114 × B',
           '1. Background Normalization: If a pixel’s luminance L exceeds a high threshold (e.g. L > 165), it is identified as paper background and mathematically boosted to pure white: RGB(255, 255, 255).',
           '2. Ink Stroke Preservation: If a pixel’s luminance L is below a lower threshold (e.g. L < 120), it represents ink pigment. The filter darkens it towards deep black: RGB(20, 20, 20) or deep blue.',
@@ -180,7 +180,7 @@ export const guidesPart2: EditorialGuide[] = [
         subheading: 'How rounding errors and browser sub-pixel rendering cause rejection',
         body: [
           'If you calculate pixels manually on a calculator and crop in generic paint software, rounding fractions can produce non-integer values (e.g. 275.59 px). Standard software will either truncate to 275 or round to 276. If a strict server checks for integer aspect ratios, slight deviations can trigger upload rejection.',
-          'FormFit India performs 64-bit floating-point geometry transformations on HTML5 Canvas and snaps coordinates to whole-pixel boundaries, guaranteeing that both pixel dimensions and JFIF DPI headers are mathematically harmonious.',
+          'FormFit performs 64-bit floating-point geometry transformations on HTML5 Canvas and snaps coordinates to whole-pixel boundaries, guaranteeing that both pixel dimensions and JFIF DPI headers are mathematically harmonious.',
         ],
       },
     ],
@@ -264,10 +264,10 @@ export const guidesPart2: EditorialGuide[] = [
       },
       {
         heading: '4. The Professional Engineering Fix: Lossless JFIF Comment Byte-Padding',
-        subheading: 'How FormFit India raises file size safely without touching visual ink',
+        subheading: 'How FormFit raises file size safely without touching visual ink',
         body: [
           'The official JPEG/JFIF ISO standard (ISO/IEC 10918-1) permits application comment markers known as COM segments (denoted by the marker 0xFF 0xFE). These segments allow image authoring tools to store non-rendered technical metadata or comments inside the JPEG stream.',
-          'FormFit India utilizes this standard to provide lossless byte-floor padding:',
+          'FormFit utilizes this standard to provide lossless byte-floor padding:',
           '1. The image is rendered to the exact required pixel dimensions (e.g. 140 × 60 px) and encoded to baseline JPEG.',
           '2. The engine checks the resulting byte length. If the file is 7.2 KB (below the 10 KB minimum), the engine calculates the difference: Target (15 KB) - Current (7.2 KB) = 7.8 KB needed.',
           '3. FormFit appends a valid, compliant 0xFFFE COM marker segment filled with non-rendered padding bytes.',
@@ -403,7 +403,7 @@ export const guidesPart2: EditorialGuide[] = [
         answer: 'Spectacles are allowed only if you wear prescription glasses regularly. There must be no reflection on the glass, and frames must not obscure the eyes. Tinted glasses or sunglasses are strictly prohibited.',
       },
       {
-        question: 'How do I generate a 4x6 postcard photo on FormFit India?',
+        question: 'How do I generate a 4x6 postcard photo on FormFit?',
         answer: 'Open FormFit’s NEET Resizer (/resize/nta-neet-ug-passport-postcard-resizer), click the "Postcard Photo (4x6)" tab, adjust the 80% face guides, toggle Name & Date, and download your 800 × 1200 px image ready for upload.',
       },
       {

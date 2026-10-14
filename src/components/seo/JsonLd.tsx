@@ -38,7 +38,7 @@ export function buildExamSchemaGraph(preset: ExamPortalPreset) {
         ),
         author: {
           '@type': 'Organization',
-          name: 'FormFit India Document Compliance Lab',
+          name: 'FormFit Document Compliance Lab',
           url: 'https://formfit.in/about',
         },
       },

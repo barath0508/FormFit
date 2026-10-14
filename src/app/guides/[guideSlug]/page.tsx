@@ -34,7 +34,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { guideSlug } = await params;
   const guide = getGuideBySlug(guideSlug);
-  if (!guide) return { title: 'Guide Not Found | FormFit India' };
+  if (!guide) return { title: 'Guide Not Found | FormFit' };
   return buildGuidePageMetadata(guide);
 }
 
@@ -79,7 +79,7 @@ export default async function GuideArticlePage({ params }: PageProps) {
         },
         publisher: {
           '@type': 'Organization',
-          name: 'FormFit India Document Compliance Lab',
+          name: 'FormFit Document Compliance Lab',
           url: 'https://formfit.in',
         },
       },

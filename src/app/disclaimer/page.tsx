@@ -4,9 +4,9 @@ import { Metadata } from 'next';
 import { AlertCircle, ShieldAlert, FileText, CheckCircle2 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Official Non-Affiliation Disclaimer | FormFit India',
+  title: 'Official Non-Affiliation Disclaimer | FormFit',
   description:
-    'FormFit India is an independent technical utility. We are not affiliated with, endorsed by, or connected to UPSC, SSC, IBPS, NTA, RRB, UIDAI, or any government body.',
+    'FormFit is an independent technical utility. We are not affiliated with, endorsed by, or connected to UPSC, SSC, IBPS, NTA, RRB, UIDAI, or any government body.',
   alternates: {
     canonical: 'https://formfit.in/disclaimer',
   },
@@ -36,10 +36,10 @@ export default function DisclaimerPage() {
           1. Independent Technical Utility Declaration
         </h2>
         <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-          <strong>FormFit India (formfit.in) is an independent, non-governmental technical utility and educational web resource.</strong>
+          <strong>FormFit (formfit.in) is an independent, non-governmental technical utility and educational web resource.</strong>
         </p>
         <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-          FormFit India is <strong>NOT</strong> affiliated with, associated with, authorized by, endorsed by, or in any way officially connected with:
+          FormFit is <strong>NOT</strong> affiliated with, associated with, authorized by, endorsed by, or in any way officially connected with:
         </p>
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-700 dark:text-slate-300 font-medium pl-2">
           <li>• Union Public Service Commission (UPSC)</li>
@@ -67,11 +67,11 @@ export default function DisclaimerPage() {
         </h2>
         <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
           All examination titles, portal names, government agency acronyms, and registered trademarks referenced on
-          FormFit India (including but not limited to UPSC, SSC CGL, IBPS PO, SBI Clerk, NEET UG, JEE Main, GATE, Aadhaar,
+          FormFit (including but not limited to UPSC, SSC CGL, IBPS PO, SBI Clerk, NEET UG, JEE Main, GATE, Aadhaar,
           and PAN) are the property of their respective trademark holders.
         </p>
         <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-          The use of these names, acronyms, and references on FormFit India constitutes <strong>Nominative Fair Use</strong> under
+          The use of these names, acronyms, and references on FormFit constitutes <strong>Nominative Fair Use</strong> under
           applicable Indian and international trademark laws. They are used strictly and solely to identify the intended
           technical file dimension, resolution, and format compatibility for applicants preparing their digital uploads.
         </p>

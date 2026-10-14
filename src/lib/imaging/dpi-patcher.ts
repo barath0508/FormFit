@@ -1,5 +1,5 @@
 /**
- * FormFit India — Binary JFIF DPI Header Injector & Safe Byte Padder
+ * FormFit — Binary JFIF DPI Header Injector & Safe Byte Padder
  * Manipulates raw JPEG JFIF (APP0) density headers and injects JPEG COM (0xFFFE)
  * markers for exact byte floor compliance on strict Indian government portals.
  */

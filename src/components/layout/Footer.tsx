@@ -160,7 +160,7 @@ export function Footer() {
         {/* Legal Disclaimer Box */}
         <div className="pt-8 border-t border-slate-800 text-xs text-slate-500 space-y-3 leading-relaxed">
           <p>
-            <strong className="text-slate-400">Official Non-Affiliation Notice:</strong> FormFit India is an
+            <strong className="text-slate-400">Official Non-Affiliation Notice:</strong> FormFit is an
             independent, privacy-first technical image formatting utility. It is not affiliated with, endorsed by, or
             operated by the Union Public Service Commission (UPSC), Staff Selection Commission (SSC), Institute of
             Banking Personnel Selection (IBPS), National Testing Agency (NTA), Unique Identification Authority of India
@@ -169,7 +169,7 @@ export function Footer() {
             technical file-specification compatibility.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-slate-800/60 text-slate-500 text-xs">
-            <p>© {new Date().getFullYear()} FormFit India (formfit.in). 100% Client-Side Free Civic Utility.</p>
+            <p>© {new Date().getFullYear()} FormFit (formfit.in). 100% Client-Side Free Civic Utility.</p>
             <div className="flex items-center gap-4 flex-wrap">
               <Link href="/privacy" className="hover:text-slate-300">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-slate-300">Terms</Link>

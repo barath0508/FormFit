@@ -198,7 +198,7 @@ export const guidesPart3: EditorialGuide[] = [
         subheading: 'Why rectangular passport photos fail UPSC automated validation',
         body: [
           'Standard passport photos in India follow a 7:9 or 3.5:4.5 aspect ratio (e.g. 275 × 354 pixels). If you upload a standard rectangular photo to UPSC OTR, the portal throws an error: "Photograph width and height must be equal."',
-          'UPSC rules state that the pixel dimensions of the photograph must be between 350 × 350 pixels and 1000 × 1000 pixels. FormFit India’s default UPSC standard of 550 × 550 pixels provides optimal sharpness while keeping file size safely in the 40 KB to 120 KB range, well below the 300 KB ceiling.',
+          'UPSC rules state that the pixel dimensions of the photograph must be between 350 × 350 pixels and 1000 × 1000 pixels. FormFit’s default UPSC standard of 550 × 550 pixels provides optimal sharpness while keeping file size safely in the 40 KB to 120 KB range, well below the 300 KB ceiling.',
         ],
       },
       {
@@ -216,7 +216,7 @@ export const guidesPart3: EditorialGuide[] = [
           'UPSC strictly mandates:',
           '1. The photograph must not be more than 10 days old from the commencement of the online application process.',
           '2. The candidate’s Full Name and the Date on which the photograph was taken (DOP) must be clearly printed at the bottom of the photograph.',
-          'FormFit India paints this compliant plaque onto your square photo automatically with crisp black typography on a white band.',
+          'FormFit paints this compliant plaque onto your square photo automatically with crisp black typography on a white band.',
         ],
       },
       {
@@ -305,7 +305,7 @@ export const guidesPart3: EditorialGuide[] = [
         ],
       },
       {
-        heading: '4. Resizing on FormFit India',
+        heading: '4. Resizing on FormFit',
         subheading: 'Cropping and contrast enhancement in seconds',
         body: [
           'Open FormFit’s Banking Resizer (/resize/ibps-po-clerk-so-rrb-resizer), select the "Thumb Impression" tab, upload the photo of your stamped sheet, center the crop on your best impression, and click Download. FormFit optimizes ridge contrast and guarantees 20–50 KB compliance.',
@@ -373,11 +373,11 @@ export const guidesPart3: EditorialGuide[] = [
         subheading: 'The cyber cafe method and why it produces blurry submissions',
         body: [
           'Candidates who do not have graphic software often print a passport photo, tape it onto paper above their signature, and scan the entire paper. This method introduces tape shadows, paper creases, skew angles, and graininess that often fail scrutiny.',
-          'FormFit India solves this digitally: our automated Photo + Signature Joiner accepts two separate clean digital image files (your photo and your signature), centers both into their designated portions on an HTML5 Canvas, and renders a single seamless composite file.',
+          'FormFit solves this digitally: our automated Photo + Signature Joiner accepts two separate clean digital image files (your photo and your signature), centers both into their designated portions on an HTML5 Canvas, and renders a single seamless composite file.',
         ],
       },
       {
-        heading: '3. Step-by-Step: Creating a 3.5 × 6.0 cm Composite on FormFit India',
+        heading: '3. Step-by-Step: Creating a 3.5 × 6.0 cm Composite on FormFit',
         subheading: 'Zero software installation, 100% private in-browser procedure',
         body: [
           'Step 1: Open FormFit’s UPPSC Resizer (/resize/uppsc-upsssc-up-police-photo-resizer).',
@@ -414,7 +414,7 @@ export const guidesPart3: EditorialGuide[] = [
     metaTitle: 'Why Server-Based Resizers Risk Aadhaar & PAN Privacy (Client-Side Guide)',
     metaDescription: 'Discover why uploading Aadhaar, PAN, and passport scans to online resizers risks identity theft, and how FormFit 100% client-side HTML5 Canvas keeps data private.',
     heading: 'Why You Should Never Upload Identity Documents to Server-Based Online Resizers',
-    subheading: 'A cybersecurity analysis of cyber cafe data leaks, remote file upload vulnerabilities, and how FormFit India’s 100% in-browser architecture protects Indian citizens.',
+    subheading: 'A cybersecurity analysis of cyber cafe data leaks, remote file upload vulnerabilities, and how FormFit’s 100% in-browser architecture protects Indian citizens.',
     author: {
       name: 'Aditya Rajan',
       role: 'Lead Document Compliance Engineer & Cybersecurity Advocate',
@@ -429,7 +429,7 @@ export const guidesPart3: EditorialGuide[] = [
       'privacy risks of online photo resizers',
       'client side image processing html5 canvas',
       'safe pan card resizer',
-      'formfit india zero upload privacy architecture',
+      'formfit zero upload privacy architecture',
     ],
     summary:
       'Every day, millions of Indian applicants search Google for "resize photo to 20kb" or "compress aadhaar pdf under 300kb" and drag sensitive documents into random web tools. Most users assume these websites simply process the image and discard it. In reality, typical server-based utilities upload full-resolution identity documents to cloud storage where they may persist indefinitely, creating catastrophic identity theft vulnerabilities. Here is how client-side processing solves this permanently.',
@@ -447,14 +447,14 @@ export const guidesPart3: EditorialGuide[] = [
         subheading: 'Shared computers and desktop download folders across India',
         body: [
           'In smaller towns and tier-2/3 cities across India, millions of candidates rely on local cyber cafes to apply for government jobs. Cyber cafe operators routinely download applicant identity documents onto shared desktop folders ("NEW FOLDER", "ADMIT CARDS 2026"), where subsequent visitors can copy or view them.',
-          'FormFit India was engineered specifically to run smoothly on any basic smartphone browser, enabling candidates to format documents privately in their own hands without ever visiting a cyber cafe.',
+          'FormFit was engineered specifically to run smoothly on any basic smartphone browser, enabling candidates to format documents privately in their own hands without ever visiting a cyber cafe.',
         ],
       },
       {
-        heading: '3. How FormFit India Works: The Zero-Server Architecture',
+        heading: '3. How FormFit Works: The Zero-Server Architecture',
         subheading: 'The technical mechanics of in-browser HTML5 Canvas and WebAssembly',
         body: [
-          'FormFit India does not possess a backend image processing server. In fact, our server costs for image processing are exactly ₹0, because your device’s own processor does all the work:',
+          'FormFit does not possess a backend image processing server. In fact, our server costs for image processing are exactly ₹0, because your device’s own processor does all the work:',
           '1. Local File Reading: When you select a file, the browser’s native FileReader API or createImageBitmap reads the raw binary bytes directly into your computer’s local RAM.',
           '2. In-Memory Canvas Manipulation: All image decoding, aspect ratio cropping, luminance thresholding (paper whitening), and Name & Date plaque painting are executed on an offscreen HTML5 <canvas> element using GPU-accelerated 2D rendering contexts.',
           '3. Binary JFIF & PDF Packaging: The canvas exports a blob into local memory. Our custom JavaScript binary patcher scans the JPEG byte buffer and injects 200/300 DPI markers and byte-padding directly in RAM.',
@@ -462,7 +462,7 @@ export const guidesPart3: EditorialGuide[] = [
           'At no point during this pipeline does a single byte of your photo, signature, or certificate leave your device.',
         ],
         table: {
-          headers: ['Security Dimension', 'Standard Online Resizers', 'FormFit India Engine'],
+          headers: ['Security Dimension', 'Standard Online Resizers', 'FormFit Engine'],
           rows: [
             ['File Destination', 'Transmitted to remote cloud server', 'Remains 100% inside your browser RAM'],
             ['Server Storage Risk', 'High (Stored in /tmp or cloud bucket)', 'Zero (No server storage exists)'],
@@ -477,7 +477,7 @@ export const guidesPart3: EditorialGuide[] = [
         subheading: 'A 30-second verification using Chrome Developer Tools',
         body: [
           'You do not have to take our word for it—you can verify FormFit’s privacy yourself:',
-          '1. Open Chrome Developer Tools on FormFit India (Press F12 or Right Click -> Inspect).',
+          '1. Open Chrome Developer Tools on FormFit (Press F12 or Right Click -> Inspect).',
           '2. Click on the "Network" tab.',
           '3. Drag and drop any 5 MB photo into our resizer.',
           '4. Crop, whiten, and download the file.',

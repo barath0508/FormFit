@@ -7,8 +7,8 @@ import { CookieConsentBanner } from '@/components/monetization/CookieConsentBann
 export const metadata: Metadata = {
   metadataBase: new URL('https://formfit.in'),
   title: {
-    default: 'FormFit India — Free Client-Side Exam Photo, Signature & Document Resizer',
-    template: '%s | FormFit India',
+    default: 'FormFit — Free Client-Side Exam Photo, Signature & Document Resizer',
+    template: '%s | FormFit',
   },
   description:
     'Resize photos and signatures for UPSC, SSC, IBPS, SBI, RRB, NEET, JEE, PAN Card, and Indian Passport online for free. 100% private in-browser tool with exact DPI header injection, minimum KB floor guarantee, and Name/Date slates.',
@@ -22,9 +22,9 @@ export const metadata: Metadata = {
     'photo and signature compressor in kb',
     'photo resizer under 50kb',
   ],
-  authors: [{ name: 'FormFit India Technical Engineering Team' }],
-  creator: 'FormFit India',
-  publisher: 'FormFit India',
+  authors: [{ name: 'FormFit Technical Engineering Team' }],
+  creator: 'FormFit',
+  publisher: 'FormFit',
   robots: {
     index: true,
     follow: true,
@@ -40,14 +40,14 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_IN',
     url: 'https://formfit.in',
-    siteName: 'FormFit India',
-    title: 'FormFit India — Free Exam Photo & Signature Compliance Engine',
+    siteName: 'FormFit',
+    title: 'FormFit — Free Exam Photo & Signature Compliance Engine',
     description:
       'Exact KB window guarantee (10–20 KB, 20–50 KB), 200/300 DPI binary injection, and Name/Date slates for all Indian government and entrance exams. 100% on-device.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'FormFit India — Free Exam Photo & Signature Compliance Engine',
+    title: 'FormFit — Free Exam Photo & Signature Compliance Engine',
     description:
       'Zero-upload, in-browser photo and signature resizer for UPSC, SSC, IBPS, NEET, JEE, and Government ID cards.',
   },

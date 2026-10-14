@@ -14,9 +14,9 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy & Zero-Upload Security Proof | FormFit India',
+  title: 'Privacy Policy & Zero-Upload Security Proof | FormFit',
   description:
-    'FormFit India processes photos, signatures, and documents 100% inside your browser RAM. Read our DPDP Act compliance, Google AdSense cookie policy, and zero-server guarantee.',
+    'FormFit processes photos, signatures, and documents 100% inside your browser RAM. Read our DPDP Act compliance, Google AdSense cookie policy, and zero-server guarantee.',
   alternates: {
     canonical: 'https://formfit.in/privacy',
   },
@@ -35,7 +35,7 @@ export default function PrivacyPage() {
           Privacy Policy &amp; Security Architecture
         </h1>
         <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
-          FormFit India (formfit.in) was engineered with a strict <strong>Privacy-First, Zero-Upload architecture</strong>.
+          FormFit (formfit.in) was engineered with a strict <strong>Privacy-First, Zero-Upload architecture</strong>.
           We believe candidates applying for government exams and civic IDs should never have their identity documents,
           handwritten signatures, or caste certificates stored on commercial cloud servers.
         </p>
@@ -48,7 +48,7 @@ export default function PrivacyPage() {
           1. 100% Client-Side Image &amp; Document Processing Guarantee
         </h2>
         <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-          When you select a candidate photograph, signature, or PDF certificate on FormFit India, the file is read
+          When you select a candidate photograph, signature, or PDF certificate on FormFit, the file is read
           directly into your device&apos;s local Random Access Memory (RAM) using the browser&apos;s native{' '}
           <code className="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-900 text-indigo-600 font-mono text-xs">
             FileReader
@@ -74,7 +74,7 @@ export default function PrivacyPage() {
           2. Google AdSense &amp; DoubleClick DART Cookie Disclosure
         </h2>
         <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-          FormFit India uses Google AdSense to serve advertisements to support this free educational utility.
+          FormFit uses Google AdSense to serve advertisements to support this free educational utility.
           In accordance with Google publisher policies, we provide the following mandatory disclosures:
         </p>
         <ul className="list-disc list-inside space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
@@ -123,7 +123,7 @@ export default function PrivacyPage() {
           data principles have fundamental rights over their personal identifiers.
         </p>
         <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-          Because FormFit India implements <em>Privacy by Design</em>:
+          Because FormFit implements <em>Privacy by Design</em>:
         </p>
         <ul className="list-disc list-inside space-y-1.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
           <li>We do not collect names, Aadhaar numbers, PAN numbers, or biometric fingerprints.</li>

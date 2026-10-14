@@ -86,7 +86,7 @@ export const ntaEngineeringMedicalPresets: ExamPortalPreset[] = [
       {
         portalMessage: 'Signature file size is less than 4 KB or greater than 30 KB.',
         cause: 'Cropping a small signature on white paper often compresses below 4 KB (e.g. 2.8 KB).',
-        solution: 'FormFit India automatically injects compliant byte-floor padding to ensure the final file sits between 10 KB and 25 KB.',
+        solution: 'FormFit automatically injects compliant byte-floor padding to ensure the final file sits between 10 KB and 25 KB.',
       },
       {
         portalMessage: 'Photo does not meet 80% face coverage rule.',
@@ -96,7 +96,7 @@ export const ntaEngineeringMedicalPresets: ExamPortalPreset[] = [
       {
         portalMessage: 'File format not supported. Only JPG/JPEG allowed.',
         cause: 'Uploading PNG, WEBP, or HEIC files directly from modern iOS or Android phones.',
-        solution: 'FormFit India instantly transcodes any image to official baseline JPEG with JFIF metadata.',
+        solution: 'FormFit instantly transcodes any image to official baseline JPEG with JFIF metadata.',
       },
     ],
     captureTips: [
@@ -111,7 +111,7 @@ export const ntaEngineeringMedicalPresets: ExamPortalPreset[] = [
       },
       {
         question: 'Does NTA JEE Main require Name and Date on the photo?',
-        answer: 'NTA specifies that photographs should preferably display the candidate name along with the date of taking the photograph. FormFit India offers a one-click toggle to add this compliant plaque.',
+        answer: 'NTA specifies that photographs should preferably display the candidate name along with the date of taking the photograph. FormFit offers a one-click toggle to add this compliant plaque.',
       },
       {
         question: 'What is the signature file size rule for JEE Main?',
@@ -130,7 +130,7 @@ export const ntaEngineeringMedicalPresets: ExamPortalPreset[] = [
         answer: 'Clear regular prescription glasses are permitted, provided there is no reflection or glare on the lenses and eyes are visible. Tinted or dark glasses will cause rejection.',
       },
       {
-        question: 'Does FormFit India store my Aadhaar or certificate scans?',
+        question: 'Does FormFit store my Aadhaar or certificate scans?',
         answer: 'Never. All processing happens entirely inside your web browser via HTML5 Canvas and WebAssembly. Nothing is ever sent to any remote server.',
       },
     ],
@@ -369,7 +369,7 @@ export const ntaEngineeringMedicalPresets: ExamPortalPreset[] = [
       {
         portalMessage: 'Image dimension or resolution error on NTA portal.',
         cause: 'Browser upload failed because image width or height was outside expected 200 DPI matrix.',
-        solution: 'FormFit India automatically configures the canvas to 276 × 354 px with JFIF 200 DPI markers.',
+        solution: 'FormFit automatically configures the canvas to 276 × 354 px with JFIF 200 DPI markers.',
       },
       {
         portalMessage: 'Uploaded file size is out of allowed range (10 KB - 200 KB).',
@@ -491,7 +491,7 @@ export const ntaEngineeringMedicalPresets: ExamPortalPreset[] = [
       {
         portalMessage: 'Signature aspect ratio is not within the acceptable range (1:2.75 to 1:3.5).',
         cause: 'GOAPS software calculates the exact ratio of width to height. A square or tall crop triggers immediate rejection.',
-        solution: 'FormFit India locks the signature canvas to 560 × 180 px, which produces a mathematical 3.11:1 ratio that matches GOAPS validators.',
+        solution: 'FormFit locks the signature canvas to 560 × 180 px, which produces a mathematical 3.11:1 ratio that matches GOAPS validators.',
       },
       {
         portalMessage: 'Photo height/width ratio is invalid.',
@@ -501,7 +501,7 @@ export const ntaEngineeringMedicalPresets: ExamPortalPreset[] = [
       {
         portalMessage: 'Signature file size is less than 10 KB.',
         cause: 'A clean crop of handwriting on white paper often compresses down to 5–8 KB.',
-        solution: 'FormFit India automatically pads the JPEG stream to ensure it lands safely in the 25–60 KB window.',
+        solution: 'FormFit automatically pads the JPEG stream to ensure it lands safely in the 25–60 KB window.',
       },
     ],
     captureTips: [
@@ -511,7 +511,7 @@ export const ntaEngineeringMedicalPresets: ExamPortalPreset[] = [
     faqs: [
       {
         question: 'Why does GOAPS reject my signature aspect ratio?',
-        answer: 'GATE GOAPS requires a strict width-to-height ratio (around 3:1, specifically height-to-width between 1:3.5 and 1:2.75). If your signature is too tall or too narrow, the portal throws an aspect ratio error. FormFit India formats the canvas to 560 × 180 px to pass this test.',
+        answer: 'GATE GOAPS requires a strict width-to-height ratio (around 3:1, specifically height-to-width between 1:3.5 and 1:2.75). If your signature is too tall or too narrow, the portal throws an aspect ratio error. FormFit formats the canvas to 560 × 180 px to pass this test.',
       },
       {
         question: 'What are the exact photo dimensions for GATE?',
@@ -597,7 +597,7 @@ export const ntaEngineeringMedicalPresets: ExamPortalPreset[] = [
       {
         portalMessage: 'Photo file size is less than 30 KB or greater than 150 KB.',
         cause: 'CAT enforces a higher minimum threshold (30 KB) than other portals.',
-        solution: 'FormFit India automatically balances JPEG quality and byte-floor padding to target the 50–90 KB window.',
+        solution: 'FormFit automatically balances JPEG quality and byte-floor padding to target the 50–90 KB window.',
       },
       {
         portalMessage: 'Signature file size exceeds 80 KB.',
@@ -631,8 +631,8 @@ export const ntaEngineeringMedicalPresets: ExamPortalPreset[] = [
         answer: 'No. The official CAT registration brochure specifies black ink on white paper only.',
       },
       {
-        question: 'Does FormFit India run offline without internet?',
-        answer: 'Yes! Once loaded in your browser, FormFit India operates completely client-side and can resize your images even without an active internet connection.',
+        question: 'Does FormFit run offline without internet?',
+        answer: 'Yes! Once loaded in your browser, FormFit operates completely client-side and can resize your images even without an active internet connection.',
       },
     ],
   },
