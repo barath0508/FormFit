@@ -5,7 +5,7 @@ import { DIMENSION_TARGETS } from '@/data/dimension-targets';
 import { GUIDES } from '@/data/guides';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://formfit.in';
+  const baseUrl = 'https://formfit-rust.vercel.app';
   const now = new Date();
 
   // 1. Static core & legal routes

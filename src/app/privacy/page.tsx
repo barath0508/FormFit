@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description:
     'FormFit processes photos, signatures, and documents 100% inside your browser RAM. Read our DPDP Act compliance, Google AdSense cookie policy, and zero-server guarantee.',
   alternates: {
-    canonical: 'https://formfit.in/privacy',
+    canonical: 'https://formfit-rust.vercel.app/privacy',
   },
 };
 
@@ -35,7 +35,7 @@ export default function PrivacyPage() {
           Privacy Policy &amp; Security Architecture
         </h1>
         <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
-          FormFit (formfit.in) was engineered with a strict <strong>Privacy-First, Zero-Upload architecture</strong>.
+          FormFit (formfit-rust.vercel.app) was engineered with a strict <strong>Privacy-First, Zero-Upload architecture</strong>.
           We believe candidates applying for government exams and civic IDs should never have their identity documents,
           handwritten signatures, or caste certificates stored on commercial cloud servers.
         </p>

@@ -12,6 +12,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
     ],
-    sitemap: 'https://formfit.in/sitemap.xml',
+    sitemap: 'https://formfit-rust.vercel.app/sitemap.xml',
   };
 }

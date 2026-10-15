@@ -13,8 +13,8 @@ export function patchJpegDpiHeader(jpegBytes: Uint8Array, dpi: number): Uint8Arr
   const hi = (clampedDpi >> 8) & 0xff;
   const lo = clampedDpi & 0xff;
 
-  // Check if standard APP0 JFIF header already exists at byte offset 2
-  const hasApp0 =
+  // Check if standard APP0 JFIF header exists at byte offset 2
+  const hasApp0AtOffset2 =
     jpegBytes[2] === 0xff &&
     jpegBytes[3] === 0xe0 &&
     jpegBytes[6] === 0x4a && // 'J'
@@ -22,7 +22,7 @@ export function patchJpegDpiHeader(jpegBytes: Uint8Array, dpi: number): Uint8Arr
     jpegBytes[8] === 0x49 && // 'I'
     jpegBytes[9] === 0x46; // 'F'
 
-  if (hasApp0) {
+  if (hasApp0AtOffset2) {
     const out = new Uint8Array(jpegBytes);
     out[13] = 0x01; // 1 = dots per inch (DPI)
     out[14] = hi;
@@ -32,7 +32,7 @@ export function patchJpegDpiHeader(jpegBytes: Uint8Array, dpi: number): Uint8Arr
     return out;
   }
 
-  // If no APP0 header, construct standard 18-byte JFIF APP0 segment:
+  // If no APP0 header at offset 2, construct standard 18-byte JFIF APP0 segment:
   // FF E0 [00 10] 'J' 'F' 'I' 'F' 00 [01 01] 01 [hi lo] [hi lo] 00 00
   const app0Segment = new Uint8Array([
     0xff,
@@ -58,7 +58,7 @@ export function patchJpegDpiHeader(jpegBytes: Uint8Array, dpi: number): Uint8Arr
   const merged = new Uint8Array(jpegBytes.length + app0Segment.length);
   // Copy SOI (first 2 bytes)
   merged.set(jpegBytes.subarray(0, 2), 0);
-  // Insert APP0 segment
+  // Insert APP0 segment immediately after SOI
   merged.set(app0Segment, 2);
   // Copy remaining bytes
   merged.set(jpegBytes.subarray(2), 2 + app0Segment.length);
@@ -70,30 +70,47 @@ export function padJpegToTargetBytes(jpegBytes: Uint8Array, targetByteLength: nu
     return jpegBytes;
   }
 
-  const bytesNeeded = targetByteLength - jpegBytes.byteLength;
+  let bytesRemaining = targetByteLength - jpegBytes.byteLength;
   // Minimum COM segment is 4 bytes (0xFF 0xFE + 2 bytes for length)
-  if (bytesNeeded < 4) {
+  if (bytesRemaining < 4) {
     return jpegBytes;
   }
 
-  const payloadLength = bytesNeeded - 2; // length field includes 2 length bytes
-  if (payloadLength > 65533) {
-    throw new Error('PADDING_OVERFLOW: Requested padding exceeds single JPEG COM segment limit');
+  // Determine safe marker boundary insertion offset
+  let insertOffset = 2; // Default immediately after SOI
+  if (jpegBytes[2] === 0xff && jpegBytes[3] === 0xe0 && jpegBytes.length >= 6) {
+    const app0Len = ((jpegBytes[4] ?? 0) << 8) | (jpegBytes[5] ?? 0);
+    insertOffset = Math.min(jpegBytes.length - 2, 4 + app0Len);
   }
 
-  const comSegment = new Uint8Array(bytesNeeded);
-  comSegment[0] = 0xff;
-  comSegment[1] = 0xfe; // COM marker
-  comSegment[2] = (payloadLength >> 8) & 0xff;
-  comSegment[3] = payloadLength & 0xff;
-  comSegment.fill(0x20, 4); // Fill payload with safe ASCII spaces
+  // Build list of COM segments (each at most 65533 payload bytes)
+  const segments: Uint8Array[] = [];
+  while (bytesRemaining >= 4) {
+    const chunkBytes = Math.min(bytesRemaining, 65535);
+    const payloadLength = chunkBytes - 2;
 
-  // Insert COM segment immediately after SOI + APP0 header (typically offset 20)
-  const insertOffset = Math.min(20, jpegBytes.length - 2);
-  const padded = new Uint8Array(targetByteLength);
+    const seg = new Uint8Array(chunkBytes);
+    seg[0] = 0xff;
+    seg[1] = 0xfe; // COM marker
+    seg[2] = (payloadLength >> 8) & 0xff;
+    seg[3] = payloadLength & 0xff;
+    seg.fill(0x20, 4); // Safe ASCII spaces
+
+    segments.push(seg);
+    bytesRemaining -= chunkBytes;
+  }
+
+  const totalComLength = segments.reduce((acc, s) => acc + s.byteLength, 0);
+  const padded = new Uint8Array(jpegBytes.length + totalComLength);
+
   padded.set(jpegBytes.subarray(0, insertOffset), 0);
-  padded.set(comSegment, insertOffset);
-  padded.set(jpegBytes.subarray(insertOffset), insertOffset + comSegment.length);
+  let currentOffset = insertOffset;
+  for (const seg of segments) {
+    padded.set(seg, currentOffset);
+    currentOffset += seg.byteLength;
+  }
+  padded.set(jpegBytes.subarray(insertOffset), currentOffset);
+
   return padded;
 }
 

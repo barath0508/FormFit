@@ -85,8 +85,8 @@ export function renderProcessedCanvas(config: RenderJobConfig): HTMLCanvasElemen
   // Compute crop box in actual source pixels
   const sx = Math.max(0, crop.x * sourceWidth);
   const sy = Math.max(0, crop.y * sourceHeight);
-  const sWidth = Math.min(sourceWidth - sx, crop.width * sourceWidth);
-  const sHeight = Math.min(sourceHeight - sy, crop.height * sourceHeight);
+  const sWidth = Math.max(1, Math.min(sourceWidth - sx, crop.width * sourceWidth));
+  const sHeight = Math.max(1, Math.min(sourceHeight - sy, crop.height * sourceHeight));
 
   if (rotationDeg !== 0) {
     // Translate to center of canvas, rotate, translate back
@@ -139,20 +139,23 @@ function applySignatureFilter(
       data[i] = 255;
       data[i + 1] = 255;
       data[i + 2] = 255;
+      data[i + 3] = 255;
     } else {
-      if (preserveBlueInk && b > r + 15 && b > g + 15) {
-        // Candidate signed with blue ballpoint or fountain pen
+      if (preserveBlueInk && b > r + 8 && b > g + 8) {
+        // Candidate signed with blue or dark-blue ballpoint / fountain pen
         // Enhance contrast while preserving blue hue
         const factor = Math.pow(luminance / threshold, 1.4);
         data[i] = Math.min(255, Math.floor(r * factor));
         data[i + 1] = Math.min(255, Math.floor(g * factor));
-        data[i + 2] = Math.min(255, Math.floor(b * (factor * 1.2)));
+        data[i + 2] = Math.min(255, Math.floor(b * (factor * 1.25)));
+        data[i + 3] = 255;
       } else {
         // Black or dark ink -> amplify darkness for high sharpness
-        const darkened = Math.floor(luminance * 0.7);
+        const darkened = Math.floor(luminance * 0.65);
         data[i] = darkened;
         data[i + 1] = darkened;
         data[i + 2] = darkened;
+        data[i + 3] = 255;
       }
     }
   }
@@ -178,14 +181,14 @@ function renderDatePlaque(
   const hasDate = dateText.trim().length > 0;
   if (!hasName && !hasDate) return;
 
-  // Plaque height: 16% if both name & date, 10% if only date
+  // Plaque height: 17% if both name & date, 11% if only date
   const plaqueHeight = Math.round(height * (hasName && hasDate ? 0.17 : 0.11));
   const startY = height - plaqueHeight;
 
   const isWhite = theme === 'white_bg';
   const bgColor = isWhite ? '#FFFFFF' : '#0F172A';
   const textColor = isWhite ? '#000000' : '#FFFFFF';
-  const borderColor = isWhite ? '#CBD5E1' : '#334155';
+  const borderColor = isWhite ? '#94A3B8' : '#334155';
 
   // Draw plaque box
   ctx.fillStyle = bgColor;
@@ -202,7 +205,12 @@ function renderDatePlaque(
   // Dynamic font sizing
   const maxTextWidth = width * 0.92;
   const nameStr = candidateName.trim().toUpperCase();
-  const dateStr = dateText.trim().startsWith('DOP') ? dateText.trim() : `DOP: ${dateText.trim()}`;
+  const rawDate = dateText.trim();
+  const upperDate = rawDate.toUpperCase();
+  const dateStr =
+    upperDate.startsWith('DOP') || upperDate.startsWith('D.O.P.') || upperDate.startsWith('DATE')
+      ? rawDate
+      : `DOP: ${rawDate}`;
 
   // Line 1: Candidate Name
   if (hasName && hasDate) {

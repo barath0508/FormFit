@@ -22,13 +22,13 @@ export const metadata: Metadata = {
   description:
     'Free online photo and signature resizer for UPSC, SSC, IBPS, RRB, NEET & PAN Card. Injects 200/300 DPI headers & locks 10–20KB and 20–50KB sizes. 100% private in-browser.',
   alternates: {
-    canonical: 'https://formfit.in',
+    canonical: 'https://formfit-rust.vercel.app',
   },
   openGraph: {
     title: 'FormFit — Official Exam Spec Photo & Signature Resizer',
     description:
       'Free online photo and signature resizer for UPSC, SSC, IBPS, RRB, NEET & PAN Card. Injects 200/300 DPI headers & locks 10–20KB and 20–50KB sizes. 100% private in-browser.',
-    url: 'https://formfit.in',
+    url: 'https://formfit-rust.vercel.app',
     siteName: 'FormFit — Official Exam Spec Photo & Signature Resizer',
     locale: 'en_IN',
     type: 'website',
@@ -44,14 +44,14 @@ export default function HomePage() {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://formfit.in' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://formfit-rust.vercel.app' },
         ],
       },
       {
         '@type': 'WebApplication',
-        '@id': 'https://formfit.in/#app',
+        '@id': 'https://formfit-rust.vercel.app/#app',
         name: 'FormFit — Official Exam Photo, Signature & Document Resizer',
-        url: 'https://formfit.in',
+        url: 'https://formfit-rust.vercel.app',
         applicationCategory: 'UtilitiesApplication',
         operatingSystem: 'Android, iOS, Windows, macOS, Linux (All HTML5 Browsers)',
         browserRequirements: 'Requires HTML5 Canvas and JavaScript',
@@ -63,7 +63,7 @@ export default function HomePage() {
         author: {
           '@type': 'Organization',
           name: 'FormFit Document Compliance Lab',
-          url: 'https://formfit.in/about',
+          url: 'https://formfit-rust.vercel.app/about',
         },
       },
       {

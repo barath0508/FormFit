@@ -5,7 +5,7 @@ import { Footer } from '@/components/layout/Footer';
 import { CookieConsentBanner } from '@/components/monetization/CookieConsentBanner';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://formfit.in'),
+  metadataBase: new URL('https://formfit-rust.vercel.app'),
   title: {
     default: 'FormFit — Free Client-Side Exam Photo, Signature & Document Resizer',
     template: '%s | FormFit',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: 'https://formfit.in',
+    url: 'https://formfit-rust.vercel.app',
     siteName: 'FormFit',
     title: 'FormFit — Free Exam Photo & Signature Compliance Engine',
     description:
@@ -63,6 +63,23 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        {/* Google tag (gtag.js) */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-PN2ZC82FRR"
+        />
+        <script
+          id="google-analytics"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-PN2ZC82FRR');
+            `,
+          }}
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
@@ -76,6 +93,16 @@ export default function RootLayout({
             crossOrigin="anonymous"
           />
         )}
+        <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `(function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yxvw70zpfq");`,
+          }}
+        />
       </head>
       <body className="min-h-screen flex flex-col bg-slate-50 dark:bg-[#090D16] text-slate-900 dark:text-slate-100 antialiased">
         {/* Skip to main content link for keyboard accessibility */}

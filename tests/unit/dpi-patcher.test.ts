@@ -95,6 +95,20 @@ describe('dpi-patcher', () => {
     expect(padded[21]).toBe(0xfe);
   });
 
+  it('pads large requests exceeding 65535 bytes across multiple COM segments', () => {
+    const input = createMinimalJpeg();
+    const targetSize = 80000; // 80 KB (> 65535 bytes)
+    const padded = padJpegToTargetBytes(input, targetSize);
+
+    expect(padded.byteLength).toBe(targetSize);
+    expect(padded[0]).toBe(0xff);
+    expect(padded[1]).toBe(0xd8);
+    expect(padded[20]).toBe(0xff);
+    expect(padded[21]).toBe(0xfe);
+    expect(padded[padded.byteLength - 2]).toBe(0xff);
+    expect(padded[padded.byteLength - 1]).toBe(0xd9);
+  });
+
   it('returns original buffer if already larger than target bytes', () => {
     const input = createMinimalJpeg();
     const padded = padJpegToTargetBytes(input, input.byteLength - 5);

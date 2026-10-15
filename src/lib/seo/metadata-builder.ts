@@ -16,7 +16,7 @@ export function buildExamPageMetadata(preset: ExamPortalPreset): Metadata {
     ? `Resize ${preset.shortName} photo to ${photo.widthPx}x${photo.heightPx} px (${photo.minKB}–${photo.maxKB} KB) & signature to ${sign.widthPx}x${sign.heightPx} px (${sign.minKB}–${sign.maxKB} KB) at ${photo.dpi} DPI. Free, 100% private in-browser tool with Name & Date option.`
     : `Free online ${preset.shortName} photo and PDF resizer (${photo.widthPx}x${photo.heightPx} px, ${photo.minKB}–${photo.maxKB} KB, ${photo.dpi} DPI). 100% client-side privacy—files never leave your phone or PC.`;
 
-  const canonicalUrl = `https://formfit.in/resize/${preset.slug}`;
+  const canonicalUrl = `https://formfit-rust.vercel.app/resize/${preset.slug}`;
 
   return {
     title,
@@ -42,7 +42,7 @@ export function buildExamPageMetadata(preset: ExamPortalPreset): Metadata {
 }
 
 export function buildKbPageMetadata(target: KbTarget): Metadata {
-  const canonicalUrl = `https://formfit.in/kb/${target.slug}`;
+  const canonicalUrl = `https://formfit-rust.vercel.app/kb/${target.slug}`;
   return {
     title: target.metaTitle,
     description: target.metaDescription,
@@ -67,7 +67,7 @@ export function buildKbPageMetadata(target: KbTarget): Metadata {
 }
 
 export function buildDimensionPageMetadata(target: DimensionTarget): Metadata {
-  const canonicalUrl = `https://formfit.in/dimensions/${target.slug}`;
+  const canonicalUrl = `https://formfit-rust.vercel.app/dimensions/${target.slug}`;
   return {
     title: target.metaTitle,
     description: target.metaDescription,
@@ -92,7 +92,7 @@ export function buildDimensionPageMetadata(target: DimensionTarget): Metadata {
 }
 
 export function buildGuidePageMetadata(guide: EditorialGuide): Metadata {
-  const canonicalUrl = `https://formfit.in/guides/${guide.slug}`;
+  const canonicalUrl = `https://formfit-rust.vercel.app/guides/${guide.slug}`;
   return {
     title: guide.metaTitle,
     description: guide.metaDescription,

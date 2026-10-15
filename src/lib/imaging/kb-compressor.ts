@@ -51,13 +51,13 @@ export async function compressCanvasToExactKB(
 ): Promise<CompressionResult> {
   const { minBytes, maxBytes, targetDpi } = target;
 
-  let low = 0.08;
+  let low = 0.01;
   let high = 0.98;
   let bestBuffer: Uint8Array | null = null;
   let bestQuality = 0.85;
 
-  // Run up to 7 binary search iterations
-  for (let iter = 0; iter < 7; iter++) {
+  // Run up to 8 binary search iterations
+  for (let iter = 0; iter < 8; iter++) {
     const mid = Number(((low + high) / 2).toFixed(3));
     const rawBlob = await canvasToJpegBlob(canvas, mid);
     const rawArrayBuffer = await rawBlob.arrayBuffer();
@@ -83,19 +83,38 @@ export async function compressCanvasToExactKB(
     }
   }
 
-  // Fallback if no iteration produced a candidate
+  // Fallback if no iteration landed inside [minBytes, maxBytes]
   if (!bestBuffer) {
-    const fallbackBlob = await canvasToJpegBlob(canvas, 0.08);
+    const fallbackBlob = await canvasToJpegBlob(canvas, 0.02);
     bestBuffer = patchJpegDpiHeader(new Uint8Array(await fallbackBlob.arrayBuffer()), targetDpi);
-    bestQuality = 0.08;
+    bestQuality = 0.02;
+  }
+
+  // If still above maxBytes (e.g. extremely dense canvas with tight ceiling), downscale slightly
+  if (bestBuffer.byteLength > maxBytes && typeof document !== 'undefined') {
+    const scaleFactor = Math.max(0.4, Math.sqrt(maxBytes / bestBuffer.byteLength) * 0.92);
+    const w = Math.max(100, Math.round(canvas.width * scaleFactor));
+    const h = Math.max(100, Math.round(canvas.height * scaleFactor));
+    const scaledCanvas = document.createElement('canvas');
+    scaledCanvas.width = w;
+    scaledCanvas.height = h;
+    const sCtx = scaledCanvas.getContext('2d');
+    if (sCtx) {
+      sCtx.drawImage(canvas, 0, 0, w, h);
+      const scaledBlob = await canvasToJpegBlob(scaledCanvas, 0.65);
+      const scaledDpiBuf = patchJpegDpiHeader(new Uint8Array(await scaledBlob.arrayBuffer()), targetDpi);
+      if (scaledDpiBuf.byteLength <= maxBytes) {
+        bestBuffer = scaledDpiBuf;
+      }
+    }
   }
 
   // Handle floor padding if smaller than minBytes
   let wasPadded = false;
   if (bestBuffer.byteLength < minBytes) {
     const targetSafeFloor = Math.min(
-      minBytes + Math.floor((maxBytes - minBytes) * 0.35),
-      maxBytes - 512
+      Math.max(minBytes + 64, minBytes + Math.floor((maxBytes - minBytes) * 0.35)),
+      Math.max(minBytes + 32, maxBytes - 256)
     );
     bestBuffer = padJpegToTargetBytes(bestBuffer, targetSafeFloor);
     wasPadded = true;

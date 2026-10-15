@@ -169,7 +169,7 @@ export function Footer() {
             technical file-specification compatibility.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-slate-800/60 text-slate-500 text-xs">
-            <p>© {new Date().getFullYear()} FormFit (formfit.in). 100% Client-Side Free Civic Utility.</p>
+            <p>© {new Date().getFullYear()} FormFit (formfit-rust.vercel.app). 100% Client-Side Free Civic Utility.</p>
             <div className="flex items-center gap-4 flex-wrap">
               <Link href="/privacy" className="hover:text-slate-300">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-slate-300">Terms</Link>

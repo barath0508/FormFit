@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   title: 'Official Document Compliance & Exam Guides Hub | FormFit',
   description: 'Comprehensive, engineer-verified editorial guides covering photo resizing, signature background cleaning, 200 DPI conversion, and portal rejection fixes.',
   alternates: {
-    canonical: 'https://formfit.in/guides',
+    canonical: 'https://formfit-rust.vercel.app/guides',
   },
   openGraph: {
     title: 'Official Document Compliance & Exam Guides Hub | FormFit',
     description: 'Comprehensive, engineer-verified editorial guides covering photo resizing, signature background cleaning, 200 DPI conversion, and portal rejection fixes.',
-    url: 'https://formfit.in/guides',
+    url: 'https://formfit-rust.vercel.app/guides',
     siteName: 'FormFit',
     locale: 'en_IN',
     type: 'website',

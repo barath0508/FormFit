@@ -52,23 +52,41 @@ export default function JpgToPdfUnderSizePage() {
           ctx.fillRect(0, 0, targetW, targetH);
           ctx.drawImage(img, 0, 0, targetW, targetH);
 
-          // Calculate quality: targetMaxKB / 400 approx
-          let quality = 0.75;
-          if (targetMaxKB <= 100) quality = 0.45;
-          else if (targetMaxKB <= 200) quality = 0.65;
-          else quality = 0.85;
+          // Deterministic binary search to ensure final PDF is strictly <= targetMaxKB
+          const maxAllowedBytes = targetMaxKB * 1024;
+          let lowQ = 0.05;
+          let highQ = 0.92;
+          let bestPdfBytes: Uint8Array | null = null;
 
-          const jpegBlob = await canvasToJpegBlob(canvas, quality);
-          const jpegBytes = new Uint8Array(await jpegBlob.arrayBuffer());
+          for (let iter = 0; iter < 5; iter++) {
+            const midQ = Number(((lowQ + highQ) / 2).toFixed(2));
+            const jBlob = await canvasToJpegBlob(canvas, midQ);
+            const jBytes = new Uint8Array(await jBlob.arrayBuffer());
+            const pBytes = await packageJpegIntoPdf({
+              jpegBytes: jBytes,
+              maxKB: targetMaxKB,
+              pageSize: 'A4',
+            });
 
-          const pdfBytes = await packageJpegIntoPdf({
-            jpegBytes,
-            maxKB: targetMaxKB,
-            pageSize: 'A4',
-          });
+            if (pBytes.byteLength <= maxAllowedBytes) {
+              bestPdfBytes = pBytes;
+              lowQ = midQ;
+            } else {
+              highQ = midQ;
+            }
+          }
 
-          setGeneratedPdfBytes(pdfBytes);
-          setFinalSizeKB(Number((pdfBytes.byteLength / 1024).toFixed(1)));
+          if (!bestPdfBytes) {
+            const minBlob = await canvasToJpegBlob(canvas, 0.05);
+            bestPdfBytes = await packageJpegIntoPdf({
+              jpegBytes: new Uint8Array(await minBlob.arrayBuffer()),
+              maxKB: targetMaxKB,
+              pageSize: 'A4',
+            });
+          }
+
+          setGeneratedPdfBytes(bestPdfBytes);
+          setFinalSizeKB(Number((bestPdfBytes.byteLength / 1024).toFixed(1)));
           URL.revokeObjectURL(objectUrl);
         } catch (e) {
           console.error(e);

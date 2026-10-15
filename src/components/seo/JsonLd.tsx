@@ -7,7 +7,7 @@ interface JsonLdProps {
 
 export function buildExamSchemaGraph(preset: ExamPortalPreset) {
   const photo = preset.assets[0]!;
-  const pageUrl = `https://formfit.in/resize/${preset.slug}`;
+  const pageUrl = `https://formfit-rust.vercel.app/resize/${preset.slug}`;
 
   return {
     '@context': 'https://schema.org',
@@ -15,8 +15,8 @@ export function buildExamSchemaGraph(preset: ExamPortalPreset) {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://formfit.in' },
-          { '@type': 'ListItem', position: 2, name: 'Exam Resizers', item: 'https://formfit.in/specs-directory' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://formfit-rust.vercel.app' },
+          { '@type': 'ListItem', position: 2, name: 'Exam Resizers', item: 'https://formfit-rust.vercel.app/specs-directory' },
           { '@type': 'ListItem', position: 3, name: `${preset.shortName} Resizer`, item: pageUrl },
         ],
       },
@@ -39,7 +39,7 @@ export function buildExamSchemaGraph(preset: ExamPortalPreset) {
         author: {
           '@type': 'Organization',
           name: 'FormFit Document Compliance Lab',
-          url: 'https://formfit.in/about',
+          url: 'https://formfit-rust.vercel.app/about',
         },
       },
       {

@@ -34,7 +34,7 @@ test.describe('Google AdSense & Technical SEO Readiness Gate', () => {
 
       // 2. Self-referencing canonical link exists
       const canonical = await page.locator('link[rel="canonical"]').getAttribute('href');
-      expect(canonical).toContain(route === '/' ? 'https://formfit.in' : route);
+      expect(canonical).toContain(route === '/' ? 'https://formfit-rust.vercel.app' : route);
 
       // 3. Meta description length check (110 to 175 chars)
       const metaDesc = await page.locator('meta[name="description"]').getAttribute('content');

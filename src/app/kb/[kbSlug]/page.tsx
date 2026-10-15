@@ -46,7 +46,7 @@ export default async function KbTargetPage({ params }: PageProps) {
     notFound();
   }
 
-  const pageUrl = `https://formfit.in/kb/${target.slug}`;
+  const pageUrl = `https://formfit-rust.vercel.app/kb/${target.slug}`;
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -54,8 +54,8 @@ export default async function KbTargetPage({ params }: PageProps) {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://formfit.in' },
-          { '@type': 'ListItem', position: 2, name: 'KB Compressors', item: 'https://formfit.in/specs-directory' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://formfit-rust.vercel.app' },
+          { '@type': 'ListItem', position: 2, name: 'KB Compressors', item: 'https://formfit-rust.vercel.app/specs-directory' },
           { '@type': 'ListItem', position: 3, name: target.title, item: pageUrl },
         ],
       },
@@ -308,7 +308,7 @@ export default async function KbTargetPage({ params }: PageProps) {
         <EditorialVerificationCard
           verifiedDate="2026-03-01"
           officialSource="Indian Government Recruitment Examination IT Guidelines (NIC & TCS iON)"
-          officialUrl="https://formfit.in/about"
+          officialUrl="https://formfit-rust.vercel.app/about"
         />
       </article>
 

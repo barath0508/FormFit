@@ -67,9 +67,11 @@ export function InteractiveCropWorkspace({
     const effectiveCropW = baseCropW / scale;
     const effectiveCropH = baseCropH / scale;
 
-    // Center coordinates
-    const centerX = sourceWidth / 2 - offset.x / scale;
-    const centerY = sourceHeight / 2 - offset.y / scale;
+    // Center coordinates accounting for viewport screen-to-source pixel ratio
+    const displayedW = Math.min(600, sourceWidth);
+    const pxRatio = displayedW > 0 ? sourceWidth / displayedW : 1;
+    const centerX = sourceWidth / 2 - (offset.x * pxRatio) / scale;
+    const centerY = sourceHeight / 2 - (offset.y * pxRatio) / scale;
 
     const left = Math.max(0, Math.min(sourceWidth - effectiveCropW, centerX - effectiveCropW / 2));
     const top = Math.max(0, Math.min(sourceHeight - effectiveCropH, centerY - effectiveCropH / 2));

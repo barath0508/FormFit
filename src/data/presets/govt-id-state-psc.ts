@@ -539,8 +539,8 @@ export const govtIdStatePscPresets: ExamPortalPreset[] = [
         id: 'uppsc-composite',
         label: 'Combined Photo with Signature Below (3.5 × 6.0 cm)',
         assetType: 'photo',
-        widthPx: 138,
-        heightPx: 236,
+        widthPx: 276,
+        heightPx: 472,
         widthCm: 3.5,
         heightCm: 6.0,
         minKB: 20,
@@ -550,8 +550,9 @@ export const govtIdStatePscPresets: ExamPortalPreset[] = [
         backgroundRule: 'White or very light grey background',
         requiresNameAndDate: 'not_required',
         notes: [
-          'UPPSC uniquely accepts or requires a single combined image where the 3.5 x 4.5 cm photo has the candidate signature placed directly underneath (total 3.5 x 6.0 cm).',
-          'File size: strictly between 20 KB and 50 KB.',
+          'UPPSC uniquely requires a single combined image where the 3.5 x 4.5 cm photo has the candidate signature placed directly underneath (total 3.5 x 6.0 cm, 276 x 472 pixels at 200 DPI).',
+          'File size: strictly between 20 KB and 50 KB in JPG/JPEG format.',
+          'Upper 4.5 cm contains the photograph and lower 1.5 cm contains the signature.',
         ],
       },
       {

@@ -458,7 +458,7 @@ export const guidesPart3: EditorialGuide[] = [
           '1. Local File Reading: When you select a file, the browser’s native FileReader API or createImageBitmap reads the raw binary bytes directly into your computer’s local RAM.',
           '2. In-Memory Canvas Manipulation: All image decoding, aspect ratio cropping, luminance thresholding (paper whitening), and Name & Date plaque painting are executed on an offscreen HTML5 <canvas> element using GPU-accelerated 2D rendering contexts.',
           '3. Binary JFIF & PDF Packaging: The canvas exports a blob into local memory. Our custom JavaScript binary patcher scans the JPEG byte buffer and injects 200/300 DPI markers and byte-padding directly in RAM.',
-          '4. Local Download: The file is passed to an object URL (blob:http://formfit.in/...) and saved directly to your Downloads folder.',
+          '4. Local Download: The file is passed to an object URL (blob:https://formfit-rust.vercel.app/...) and saved directly to your Downloads folder.',
           'At no point during this pipeline does a single byte of your photo, signature, or certificate leave your device.',
         ],
         table: {

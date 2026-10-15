@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     'Terms of service for FormFit. Learn about our free utility scope, candidate portal preview verification duties, and intellectual property terms.',
   alternates: {
-    canonical: 'https://formfit.in/terms',
+    canonical: 'https://formfit-rust.vercel.app/terms',
   },
 };
 
@@ -25,7 +25,7 @@ export default function TermsPage() {
           Terms of Service
         </h1>
         <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
-          Last revised: March 2026. Please read these terms carefully before utilizing FormFit (formfit.in).
+          Last revised: March 2026. Please read these terms carefully before utilizing FormFit (formfit-rust.vercel.app).
           By accessing this technical utility, you agree to comply with the operational conditions outlined herein.
         </p>
       </header>

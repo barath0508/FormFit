@@ -46,7 +46,7 @@ export default async function GuideArticlePage({ params }: PageProps) {
     notFound();
   }
 
-  const pageUrl = `https://formfit.in/guides/${guide.slug}`;
+  const pageUrl = `https://formfit-rust.vercel.app/guides/${guide.slug}`;
 
   // Match primary related exam preset for the interactive callout card
   const primaryExamSlug = guide.relatedExamSlugs[0];
@@ -58,8 +58,8 @@ export default async function GuideArticlePage({ params }: PageProps) {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://formfit.in' },
-          { '@type': 'ListItem', position: 2, name: 'Guides Hub', item: 'https://formfit.in/guides' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://formfit-rust.vercel.app' },
+          { '@type': 'ListItem', position: 2, name: 'Guides Hub', item: 'https://formfit-rust.vercel.app/guides' },
           { '@type': 'ListItem', position: 3, name: guide.title, item: pageUrl },
         ],
       },
@@ -80,7 +80,7 @@ export default async function GuideArticlePage({ params }: PageProps) {
         publisher: {
           '@type': 'Organization',
           name: 'FormFit Document Compliance Lab',
-          url: 'https://formfit.in',
+          url: 'https://formfit-rust.vercel.app',
         },
       },
       {

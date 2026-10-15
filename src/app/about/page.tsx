@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     'Learn about FormFit, our 3-step methodology for auditing government recruitment notifications, and our zero-server-cost client-side privacy model.',
   alternates: {
-    canonical: 'https://formfit.in/about',
+    canonical: 'https://formfit-rust.vercel.app/about',
   },
 };
 
@@ -22,7 +22,7 @@ export default function AboutPage() {
           <span>Independent Civic Technology Initiative</span>
         </div>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-          About FormFit (formfit.in)
+          About FormFit (formfit-rust.vercel.app)
         </h1>
         <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
           FormFit was engineered to solve a widespread, stressful problem faced by tens of millions of Indian students,

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     'FormFit is an independent technical utility. We are not affiliated with, endorsed by, or connected to UPSC, SSC, IBPS, NTA, RRB, UIDAI, or any government body.',
   alternates: {
-    canonical: 'https://formfit.in/disclaimer',
+    canonical: 'https://formfit-rust.vercel.app/disclaimer',
   },
 };
 
@@ -36,7 +36,7 @@ export default function DisclaimerPage() {
           1. Independent Technical Utility Declaration
         </h2>
         <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-          <strong>FormFit (formfit.in) is an independent, non-governmental technical utility and educational web resource.</strong>
+          <strong>FormFit (formfit-rust.vercel.app) is an independent, non-governmental technical utility and educational web resource.</strong>
         </p>
         <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
           FormFit is <strong>NOT</strong> affiliated with, associated with, authorized by, endorsed by, or in any way officially connected with:
